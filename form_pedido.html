@@ -1,26 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Formulario de Pedido</title>
+    <meta charset="UTF-8">
+    <title>EcoPlato - Pedido</title>
 </head>
 <body>
-    <h1>Formulario de Pedido</h1>
-    <form action="pedidos.html">
-        <label>Nombre del cliente (n):</label><br>
-        <input type="text" name="n"><br>
-        <label>Direccion (d):</label><br>
-        <input type="text" name="d"><br>
-        <label>Telefono (t):</label><br>
-        <input type="text" name="t"><br>
-        
-        <label>Seleccion de platos (p):</label><br>
-        <input type="checkbox" name="p" value="1"> Opcion 1<br>
-        
-        <label>Cantidad (c):</label><br>
-        <input type="number" name="c"><br>
-        
-        <input type="submit" value="Enviar Pedido">
-    </form>
-    <p><a href="menu.html">Regresar al Menu</a></p>
+
+    <header>
+        <img src="img/logo.png" alt="Logo EcoPlato" width="250">
+        <h1>EcoPlato</h1>
+        <p>Menos desperdicio, más sabor</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="form_pedido.html">Pedido</a></li>
+            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <hr>
+
+    <main>
+        <h2>Formulario de Pedido</h2>
+        <form action="pedidos.html">
+            <label>Nombre del cliente (n):</label><br>
+            <input type="text" name="n"><br><br>
+            
+            <label>Direccion de entrega (d):</label><br>
+            <input type="text" name="d"><br><br>
+            
+            <label>Telefono de contacto (t):</label><br>
+            <input type="text" name="t"><br><br>
+            
+            <label>Seleccion de platos (p):</label><br>
+            <input type="checkbox" name="p" value="1"> Opcion 1<br>
+            <input type="checkbox" name="p" value="2"> Opcion 2<br><br>
+            
+            <label>Cantidad (c):</label><br>
+            <input type="number" name="c"><br><br>
+            
+            <input type="submit" value="Enviar Pedido">
+        </form>
+    </main>
+
+    <hr>
+
+    <footer>
+        <p>Contacto: contacto@ecoplato.com</p>
+        <p>Teléfono: 987654321</p>
+        <p>Redes sociales:</p>
+        <ul>
+            <li>Facebook</li>
+            <li>Instagram</li>
+            <li>WhatsApp</li>
+        </ul>
+
+        <p>2026 EcoPlato - Todos los derechos reservados</p>
+    </footer>
+
 </body>
 </html>
