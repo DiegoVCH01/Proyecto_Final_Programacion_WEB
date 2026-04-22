@@ -1,157 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>EcoPlato - Pedidos</title>
 </head>
-
 <body>
 
-    <center>
+    <header>
+        <img src="img/logo.png" alt="Logo EcoPlato">
+        <h1>EcoPlato</h1>
+        <p>Menos desperdicio, más sabor</p>
+    </header>
 
-        <header>
-            <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-            <h1>EcoPlato</h1>
-            <p>Menos desperdicio, más sabor</p>
-        </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="menu.html">Menú</a></li>
+            <li><a href="form_pedido.html">Pedido</a></li>
+            <li><a href="ofertas.html">Ofertas</a></li>
+            <li><a href="pedidos.html">Pedidos</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
 
-        <nav>
-            <a href="index.html">Inicio</a> |
-            <a href="menu.html">Menú</a> |
-            <a href="form_pedido.html">Pedido</a> |
-            <a href="ofertas.html">Ofertas</a> |
-            <a href="pedidos.html">Pedidos</a> |
-            <a href="login.html">Login</a>
-        </nav>
+    <hr>
 
-        <hr>
+    <main>
+        <h2>Pedidos realizados</h2>
+        <p>Historial de pedidos registrados en el sistema.</p>
 
-        <main>
-            <h2>Pedidos realizados</h2>
-            <p>Aquí puedes ver el historial de pedidos registrados.</p>
+        <table>
+            <tr>
+                <th>N° Pedido</th>
+                <th>Cliente</th>
+                <th>Productos</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th>Estado</th>
+            </tr>
 
-            <table border="1" width="80%">
-                <tr align="center">
-                    <th>N° Pedido</th>
-                    <th>Cliente</th>
-                    <th>Productos</th>
-                    <th>Cantidad</th>
-                    <th>Total (S/)</th>
-                    <th>Estado</th>
-                </tr>
+            <tr>
+                <td>001</td>
+                <td>Juan Pérez</td>
+                <td>Arroz con pollo</td>
+                <td>2</td>
+                <td>20.00</td>
+                <td>Enviado</td>
+            </tr>
 
-                <tr align="center">
-                    <td>001</td>
-                    <td>Juan Pérez</td>
-                    <td>Arroz con pollo</td>
-                    <td>2</td>
-                    <td>20.00</td>
-                    <td>Enviado</td>
-                </tr>
+            <tr>
+                <td>002</td>
+                <td>María López</td>
+                <td>Ensalada + Jugo</td>
+                <td>1</td>
+                <td>12.00</td>
+                <td>En proceso</td>
+            </tr>
 
-                <tr align="center">
-                    <td>002</td>
-                    <td>María López</td>
-                    <td>Ensalada + Jugo</td>
-                    <td>1</td>
-                    <td>12.00</td>
-                    <td><strong>En proceso</strong></td>
-                </tr>
+            <tr>
+                <td>003</td>
+                <td>Carlos Ruiz</td>
+                <td>Pollo a la brasa</td>
+                <td>1</td>
+                <td>25.00</td>
+                <td>Preparando</td>
+            </tr>
 
-                <tr align="center">
-                    <td>003</td>
-                    <td>Carlos Ruiz</td>
-                    <td>Pollo a la brasa</td>
-                    <td>1</td>
-                    <td>25.00</td>
-                    <td>Preparando</td>
-                </tr>
+            <tr>
+                <td>004</td>
+                <td>Ana Torres</td>
+                <td>Ensalada</td>
+                <td>3</td>
+                <td>15.00</td>
+                <td>Enviado</td>
+            </tr>
 
-                <tr align="center">
-                    <td>004</td>
-                    <td>Ana Torres</td>
-                    <td>Ensalada fresca</td>
-                    <td>3</td>
-                    <td>15.00</td>
-                    <td>Enviado</td>
-                </tr>
+            <tr>
+                <td>005</td>
+                <td>Luis Gómez</td>
+                <td>Pollo + arroz</td>
+                <td>2</td>
+                <td>18.00</td>
+                <td>Preparando</td>
+            </tr>
+        </table>
 
-                <tr align="center">
-                    <td>005</td>
-                    <td>Luis Gómez</td>
-                    <td>Arroz + Pollo</td>
-                    <td>2</td>
-                    <td>18.00</td>
-                    <td>Preparando</td>
-                </tr>
+        <br>
 
-                <tr align="center">
-                    <td>006</td>
-                    <td>Sofía Ramos</td>
-                    <td>Jugo + Ensalada</td>
-                    <td>1</td>
-                    <td>10.00</td>
-                    <td>En proceso</td>
-                </tr>
+        <a href="menu.html">Volver al menú</a>
+        <a href="index.html">Ir al inicio</a>
 
-                <tr align="center">
-                    <td>007</td>
-                    <td>Pedro Castillo</td>
-                    <td>Pollo a la brasa</td>
-                    <td>2</td>
-                    <td>36.00</td>
-                    <td>Enviado</td>
-                </tr>
+    </main>
 
-                <tr align="center">
-                    <td>008</td>
-                    <td>Lucía Fernández</td>
-                    <td>Arroz con pollo</td>
-                    <td>1</td>
-                    <td>9.00</td>
-                    <td>Preparando</td>
-                </tr>
+    <hr>
 
-                <tr align="center">
-                    <td>009</td>
-                    <td>Diego Vargas</td>
-                    <td>Ensalada</td>
-                    <td>2</td>
-                    <td>10.00</td>
-                    <td>En proceso</td>
-                </tr>
-
-                <tr align="center">
-                    <td>010</td>
-                    <td>Valeria Cruz</td>
-                    <td>Combo completo</td>
-                    <td>1</td>
-                    <td>20.00</td>
-                    <td><strong>Enviado</strong></td>
-                </tr>
-
-            </table>
-
-            <br>
-
-            <a href="menu.html">Volver al menú</a> |
-            <a href="index.html">Ir al inicio</a>
-
-        </main>
-
-        <hr>
-
-        <footer>
-            <p>Contacto: contacto@ecoplato.com</p>
-            <p>Teléfono: 987654321</p>
-            <p>Comprometidos con la reducción del desperdicio de alimentos</p>
-
-            <p>2026 EcoPlato - Todos los derechos reservados</p>
-        </footer>
-
-    </center>
+    <footer>
+        <p>Contacto: contacto@ecoplato.com</p>
+        <p>Teléfono: 987654321</p>
+        <p>2026 EcoPlato</p>
+    </footer>
 
 </body>
-
 </html>
