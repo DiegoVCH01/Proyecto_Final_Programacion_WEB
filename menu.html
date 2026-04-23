@@ -1,67 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
     <title>Menú de Comidas</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+      <img src="img/logo.png" alt="Logo EcoPlato" width="250" />
+      <h1>EcoPlato</h1>
+      <p>Menos desperdicio, más sabor</p>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="menu.html">Menú</a></li>
+        <li><a href="form_pedido.html">Pedido</a></li>
+        <li><a href="ofertas.html">Ofertas</a></li>
+        <li><a href="pedidos.html">Pedidos</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+    </nav>
+    <hr />
 
-    <h1>Menú de Comidas con Descuento</h1>
-    <p>Alimentos disponibles. ¡Ayudando a reducir el desperdicio y la contaminacion al medio ambiente!</p>
+    <main>
+      <h2>Lista de Productos Disponibles</h2>
 
-    <hr>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Nombre del Producto</th>
+            <th>Descripción</th>
+            <th>Precio Original</th>
+            <th>Precio con Descuento</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pan Integral</td>
+            <td>Pan de trigo integral, horneado del día anterior</td>
+            <td>S/ 5.00</td>
+            <td>S/ 2.50</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Leche Fresca</td>
+            <td>Leche entera, próxima a vencer, refrigerada</td>
+            <td>S/ 4.50</td>
+            <td>S/ 2.00</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Manzanas Rojas</td>
+            <td>Manzanas frescas con pequeños golpes, ideales para jugo</td>
+            <td>S/ 6.00</td>
+            <td>S/ 3.00</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Pollo Entero</td>
+            <td>Pollo fresco, debe consumirse hoy</td>
+            <td>S/ 18.00</td>
+            <td>S/ 10.00</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Arroz Blanco (1kg)</td>
+            <td>Arroz de grano largo, empaque ligeramente dañado</td>
+            <td>S/ 5.50</td>
+            <td>S/ 3.50</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Yogur Natural</td>
+            <td>Yogur sin azúcar, próximo a vencer</td>
+            <td>S/ 7.00</td>
+            <td>S/ 3.50</td>
+            <td>
+              <button>Añadir al Pedido</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+      <a href="index.html">Ir al inicio</a>
+    </main>
 
-    <h2>Pan Integral</h2>
-    <p><b>Descripción:</b> Pan de trigo integral, horneado del día anterior.</p>
-    <p><b>Precio original:</b> S/ 5.00</p>
-    <p><b>Precio con descuento:</b> S/ 2.50</p>
-    <button onclick="alert('Pan Integral añadido al pedido')">Añadir al Pedido</button>
+    <hr />
 
-    <hr>
-
-    <h2>Leche Fresca</h2>
-    <p><b>Descripción:</b> Leche entera, próxima a vencer, refrigerada.</p>
-    <p><b>Precio original:</b> S/ 4.50</p>
-    <p><b>Precio con descuento:</b> S/ 2.00</p>
-    <button onclick="alert('Leche Fresca añadida al pedido')">Añadir al Pedido</button>
-
-    <hr>
-
-    <h2>Manzanas Rojas</h2>
-    <p><b>Descripción:</b> Manzanas frescas con pequeños golpes, ideales para jugo.</p>
-    <p><b>Precio original:</b> S/ 6.00</p>
-    <p><b>Precio con descuento:</b> S/ 3.00</p>
-    <button onclick="alert('Manzanas Rojas añadidas al pedido')">Añadir al Pedido</button>
-
-    <hr>
-
-    <h2>Pollo Entero</h2>
-    <p><b>Descripción:</b> Pollo fresco, debe consumirse hoy.</p>
-    <p><b>Precio original:</b> S/ 18.00</p>
-    <p><b>Precio con descuento:</b> S/ 10.00</p>
-    <button onclick="alert('Pollo Entero añadido al pedido')">Añadir al Pedido</button>
-
-    <hr>
-
-    <h2>Arroz Blanco (1kg)</h2>
-    <p><b>Descripción:</b> Arroz de grano largo, empaque ligeramente dañado.</p>
-    <p><b>Precio original:</b> S/ 5.50</p>
-    <p><b>Precio con descuento:</b> S/ 3.50</p>
-    <button onclick="alert('Arroz Blanco añadido al pedido')">Añadir al Pedido</button>
-
-    <hr>
-
-    <h2>Yogur Natural</h2>
-    <p><b>Descripción:</b> Yogur sin azúcar, próximo a vencer.</p>
-    <p><b>Precio original:</b> S/ 7.00</p>
-    <p><b>Precio con descuento:</b> S/ 3.50</p>
-    <button onclick="alert('Yogur Natural añadido al pedido')">Añadir al Pedido</button>
-
-    <hr>
-
-    <p><a href="index.html">Volver al Inicio</a></p>
-    <p><a href="pedido.html">Ver mi Pedido</a></p>
-
-</body>
+    <footer>
+      <p>Contacto: contacto@ecoplato.com</p>
+      <p>Teléfono: 987654321</p>
+      <p>2026 EcoPlato</p>
+    </footer>
+  </body>
 </html>
