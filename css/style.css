@@ -426,3 +426,46 @@ footer ul {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* ==========================
+   BOTÓN CARRITO
+========================== */
+
+.btn-carrito {
+    margin-top: 12px;
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #82A94E;
+    color: white;
+
+    font-size: 0.95rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    transition: background-color 0.3s ease,
+                transform 0.2s ease,
+                box-shadow 0.3s ease;
+}
+
+.btn-carrito:hover {
+    background-color: #5B6C3A;
+    transform: translateY(-2px);
+
+    box-shadow: 0 4px 12px rgba(91,108,58,0.25);
+}
+
+.btn-carrito i {
+    transition: transform 0.3s ease;
+}
+
+.btn-carrito:hover i {
+    transform: rotate(-12deg) scale(1.15);
+}
