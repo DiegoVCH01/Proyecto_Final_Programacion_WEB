@@ -2,139 +2,256 @@
 <html lang="es">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>EcoPlato - Ofertas</title>
+    <title>Mrs. Green Spoon - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 
 <body>
 
-    <header> <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
+    <header class="header-principal">
+
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo Mrs. GS">
+
+            <div class="logo-texto">
+                <h1>Mrs. Green Spoon</h1>
+                <p>Menos desperdicio, más sabor</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="form_pedido.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
 
-    <hr>
 
-    <main>
-        <marquee>
-            <h2>Ofertas Especiales solo por tiempo limitado!! ||| Encuentra la mejores ofertas solo aquí!!</h2>
-        </marquee>
-        <p>Productos con mayor descuento disponibles por tiempo limitado.</p>
 
-        <table border="1">
-            <tr>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Precio original</th>
-                <th>Precio oferta</th>
-                <th>Disponibilidad</th>
-            </tr>
 
-            <tr>
-                <td>Arroz con pollo</td>
-                <td>Plato casero tradicional</td>
-                <td>15.00</td>
-                <td>8.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+<main>
 
-            <tr>
-                <td>Ensalada fresca</td>
-                <td>Vegetales orgánicos</td>
-                <td>10.00</td>
-                <td>5.00</td>
-                <td>Oferta limitada</td>
-            </tr>
+<section class="seccion-ofertas">
 
-            <tr>
-                <td>Pollo a la brasa</td>
-                <td>Incluye papas</td>
-                <td>30.00</td>
-                <td>18.00</td>
-                <td>Pocas porciones</td>
-            </tr>
+    <div class="ofertas-grid">
 
-            <tr>
-                <td>Jugo natural</td>
-                <td>Frutas frescas</td>
-                <td>8.00</td>
-                <td>4.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍛 Arroz con Pollo</h3>
+                <p>Plato casero preparado con ingredientes frescos y porción completa.</p>
 
-            <tr>
-                <td>Combo saludable</td>
-                <td>Ensalada + jugo</td>
-                <td>20.00</td>
-                <td>11.00</td>
-                <td>Oferta especial</td>
-            </tr>
+                <div class="precio-box">
+                    <span class="precio-original">S/15.00</span>
+                    <span class="precio-oferta">S/8.00</span>
+                </div>
+            </div>
 
-            <tr>
-                <td>Sopa casera</td>
-                <td>Sopa del día</td>
-                <td>12.00</td>
-                <td>6.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+            <img src="img/placeholder-food.jpg" alt="Arroz con Pollo">
+        </article>
 
-            <tr>
-                <td>Pasta al pesto</td>
-                <td>Pasta con salsa natural</td>
-                <td>18.00</td>
-                <td>10.00</td>
-                <td>Oferta limitada</td>
-            </tr>
 
-            <tr>
-                <td>Hamburguesa casera</td>
-                <td>Carne artesanal</td>
-                <td>14.00</td>
-                <td>9.00</td>
-                <td>Pocas porciones</td>
-            </tr>
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🥗 Ensalada Fresca</h3>
+                <p>Vegetales seleccionados y aderezo natural.</p>
 
-            <tr>
-                <td>Batido de frutas</td>
-                <td>Frutas mixtas</td>
-                <td>9.00</td>
-                <td>5.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+                <div class="precio-box">
+                    <span class="precio-original">S/12.00</span>
+                    <span class="precio-oferta">S/6.00</span>
+                </div>
+            </div>
 
-            <tr>
-                <td>Pizza personal</td>
-                <td>Queso y tomate</td>
-                <td>16.00</td>
-                <td>10.00</td>
-                <td>Oferta especial</td>
-            </tr>
-        </table>
+            <img src="img/placeholder-food.jpg" alt="Ensalada">
+        </article>
 
-        <br>
 
-        <a href="menu.html">Ver menú</a>
-        <a href="form_pedido.html">Realizar pedido</a>
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍗 Pollo a la Brasa</h3>
+                <p>Incluye papas y cremas especiales.</p>
 
-    </main>
+                <div class="precio-box">
+                    <span class="precio-original">S/30.00</span>
+                    <span class="precio-oferta">S/18.00</span>
+                </div>
+            </div>
 
-    <hr>
+            <img src="img/placeholder-food.jpg" alt="Pollo a la Brasa">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🥤 Jugo Natural</h3>
+                <p>Preparado con frutas frescas del día.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/8.00</span>
+                    <span class="precio-oferta">S/4.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Jugo">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍝 Pasta al Pesto</h3>
+                <p>Pasta artesanal con salsa natural.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/18.00</span>
+                    <span class="precio-oferta">S/10.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Pasta">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍕 Pizza Personal</h3>
+                <p>Queso mozzarella y salsa artesanal.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/16.00</span>
+                    <span class="precio-oferta">S/10.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Pizza">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍔 Hamburguesa Clásica</h3>
+                <p>Carne artesanal con vegetales frescos.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/20.00</span>
+                    <span class="precio-oferta">S/12.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Hamburguesa">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🌮 Tacos Mixtos</h3>
+                <p>Tortillas frescas con variedad de rellenos.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/18.00</span>
+                    <span class="precio-oferta">S/9.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Tacos">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍣 Sushi Roll</h3>
+                <p>Rollos frescos preparados al momento.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/24.00</span>
+                    <span class="precio-oferta">S/14.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Sushi">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🥪 Sandwich Especial</h3>
+                <p>Pan artesanal con ingredientes frescos.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/14.00</span>
+                    <span class="precio-oferta">S/8.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Sandwich">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>🍰 Cheesecake</h3>
+                <p>Postre artesanal de edición limitada.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/12.00</span>
+                    <span class="precio-oferta">S/7.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Cheesecake">
+        </article>
+
+
+        <article class="oferta-card">
+            <div class="oferta-info">
+                <h3>☕ Café Premium</h3>
+                <p>Café recién preparado con granos seleccionados.</p>
+
+                <div class="precio-box">
+                    <span class="precio-original">S/10.00</span>
+                    <span class="precio-oferta">S/5.00</span>
+                </div>
+            </div>
+
+            <img src="img/placeholder-food.jpg" alt="Café">
+        </article>
+
+    </div>
+
+</section>
+
+</main>
+
 
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>2026 EcoPlato</p>
+        <p><i class="fa-solid fa-envelope"></i> Contacto: contacto@mrsgreenspoon.com</p>
+        <p><i class="fa-solid fa-phone"></i> Teléfono: 987654321</p>
+        <p><i class="fa-solid fa-share-nodes"></i> Redes sociales:</p>
+
+
+        <ul>
+            <a href="https://facebook.com" target="_blank" class="social-item">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/987654321" target="_blank" class="social-item">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </ul>
+
+        <p class="footer-copy">
+            2026 Mrs. Green Spoon — Todos los derechos reservados
+        </p>
     </footer>
 
 </body>
