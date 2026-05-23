@@ -2,43 +2,78 @@
 <html lang="es">
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>EcoPlato - Iniciar Sesión</title>
+    <title>Mrs. Green Spoon - Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
+    <header class="header-principal">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo Mrs. GS">
+            <div class="logo-texto">
+                <h1>Mrs. Green Spoon</h1>
+                <p>Menos desperdicio, más sabor</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="form_pedido.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <hr>
-
     <main>
-        <h2>Inicio de Sesión</h2>
-        <form action="index.html" method="get">
-            <div>
-                <label for="usuario">Usuario o Correo:</label>
-                <input type="text" id="usuario" name="usuario" required>
-            </div>
-            <br>
-            <div>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <br>
-            <button type="submit">Ingresar</button>
-        </form>
-        <p>¿No tienes una cuenta? <a href="registrar.html">Regístrate aquí</a></p>
+        <section class="seccion-bienvenida" style="text-align: center;">
+            <h2>Inicio de Sesión</h2>
+            <p>Ingresa a tu cuenta para gestionar tus pedidos y ver ofertas exclusivas.</p>
+            
+            <form action="index.html" method="get" class="form-auth">
+                <div class="form-group">
+                    <label for="usuario">Usuario o Correo:</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Ej: maria@correo.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" placeholder="********" required>
+                </div>
+                
+                <button type="submit" class="btn-auth"><i class="fa-solid fa-right-to-bracket"></i> Ingresar</button>
+            </form>
+
+            <p class="registro-link">¿No tienes una cuenta? <a href="registrar.html">Regístrate aquí</a></p>
+        </section>
     </main>
 
-    <hr>
-
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>2026 EcoPlato</p>
+        <p><i class="fa-solid fa-envelope"></i> Contacto: contacto@mrsgreenspoon.com</p>
+        <p><i class="fa-solid fa-phone"></i> Teléfono: 987654321</p>
+        <p><i class="fa-solid fa-share-nodes"></i> Redes sociales:</p>
+
+        <ul>
+            <a href="https://facebook.com" target="_blank" class="social-item">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/987654321" target="_blank" class="social-item">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </ul>
+
+        <p class="footer-copy">
+            2026 Mrs. Green Spoon — Todos los derechos reservados
+        </p>
     </footer>
 
 </body>
