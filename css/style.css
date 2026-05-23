@@ -469,3 +469,90 @@ footer ul {
 .btn-carrito:hover i {
     transform: rotate(-12deg) scale(1.15);
 }
+
+/* ==========================
+   FORMULARIOS (Login / Registro)
+========================== */
+
+.form-auth {
+    max-width: 380px;
+    margin: 25px auto;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #d6e8b4;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(91, 108, 58, 0.08);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #5B6C3A;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #82A94E;
+    box-shadow: 0 0 0 3px rgba(130, 169, 78, 0.2);
+}
+
+.btn-auth {
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #82A94E;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-auth:hover {
+    background-color: #5B6C3A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(91, 108, 58, 0.25);
+}
+
+.registro-link {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.registro-link a {
+    color: #82A94E;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.registro-link a:hover {
+    color: #5B6C3A;
+    text-decoration: underline;
+}
