@@ -1,363 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>Mrs. GS - Inicio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'PT Sans', Verdana, sans-serif;
-            background-color: #FFFFFF;
-            color: #333333;
-            line-height: 1.7;
-        }
-
-        .topbar {
-            background-color: #5B6C3A;
-            color: #FFFFFF;
-            font-size: 0.85rem;
-            padding: 7px 20px;
-            text-align: center;
-            animation: deslizarAbajo 0.5s ease both;
-        }
-
-        .topbar strong {
-            color: #A8C167;
-        }
-
-
-
-        header {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: #82A94E;
-            color: #FFFFFF;
-            padding: 20px 10px;
-        }
-
-
-        header img {
-            width: 250px;
-            margin-bottom: 10px;
-            animation: aparecerLogo 0.8s 0.2s ease both;
-        }
-
-        .logo-placeholder {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            animation: aparecerLogo 0.8s 0.2s ease both;
-            display: inline-block;
-        }
-
-        @keyframes aparecerLogo {
-            from { opacity: 0; transform: scale(0.7); }
-            to   { opacity: 1; transform: scale(1); }
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            font-size: 1.2em;
-            font-style: italic;
-            opacity: 0.9;
-        }
-
-        nav {
-            background-color:#5B6C3A;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            padding: 8px 16px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-weight: bold;
-            padding: 5px 10px;
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            gap: 7px;
-            transition: 0.3s;
-        }
-        nav ul li a:hover {
-            background-color: #A8C167;
-            border-radius: 5px;
-            transform: scale(1.05);
-        }
-
-        main {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-            padding: 36px 20px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            animation: aparecerContenido 0.7s 0.3s ease both;
-        }
-
-        @keyframes aparecerContenido {
-            from { opacity: 0; transform: translateY(16px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        main h2 {
-            font-family: 'Playfair Display', Georgia, serif;
-            color: #82A94E;
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        main h3 {
-            color: #5B6C3A;
-            font-size: 1.5rem;
-            margin-bottom: 5px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        main p {
-            margin-bottom: 15px;
-            color: #555;
-        }
-
-        .seccion-bienvenida {
-            padding-bottom: 30px;
-            border-bottom: 3px solid #e0e8d0;
-        }
-
-
-        .seccion-accesos {
-            padding-top: 6px;
-        }
-
-        .accesos-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-top: 4px;
-        }
-
-        .acceso-card {
-            background-color: #FFFFFF;
-            border: 1px solid #d6e8b4;
-            border-radius: 10px;
-            padding: 24px 20px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 2px 16px rgba(91,108,58,0.10);
-
-            
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-
-            
-            transition: transform 0.3s ease,
-                        box-shadow 0.3s ease,
-                        border-color 0.3s ease;
-        }
-
-        .acceso-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 24px rgba(91,108,58,0.18);
-            border-color: #82A94E;
-        }
-
-        .acceso-icono {
-            width: 48px;
-            height: 48px;
-            background-color: #EBF4D6;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            color: #5B6C3A;
-            transition: background-color border-color 0.3s ease,
-                        transform border-color 0.3s ease;
-        }
-
-        .acceso-card:hover .acceso-icono {
-            background-color: #82A94E;
-            color: #FFFFFF;
-            transform: rotate(8deg) scale(1.1);
-        }
-
-        .acceso-card h4 {
-            font-size: 1rem;
-            font-weight: 700;
-            color: #5B6C3A;
-        }
-
-        .acceso-card p {
-            font-size: 0.88rem;
-            color: #666;
-            line-height: 1.5;
-            margin-bottom: 0;
-        }
-
-        .acceso-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            color: #82A94E;
-            font-weight: 700;
-            font-size: 0.88rem;
-            margin-top: auto;
-            transition: color 0.3s ease, gap 0.3s ease;
-        }
-
-        .acceso-card:hover .acceso-link {
-            color: #5B6C3A;
-            gap: 10px;
-        }
-
-
-        
-        footer {
-            background-color: #F5F5F5;
-            color: #5B6C3A;
-            text-align: center;
-            padding: 20px 10px;
-            font-size: 0.9rem;
-            margin-top: 40px;
-            border-top: 2px solid #EBF4D6;
-        }
-
-        footer p {
-            margin-bottom: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 7px;
-        }
-
-        footer p i {
-            color: #82A94E;
-        }
-
-        
-        footer ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 10px 0 14px;
-        }
-
-
-        .social-item {
-            display: inline-block;
-            align-items: center;
-            gap: 6px;
-            background-color: #EBF4D6;
-            padding: 6px 14px;
-            border-radius: 20px;
-            transition: background-color 0.3s ease,
-                        transform 0.3s ease;
-            
-        }
-
-        .social-item:hover {
-            background-color: #A8C167;
-            transform: scale(1.1);
-        }
-
-        .social-item i {
-            color: #5B6C3A;
-        }
-
-        .footer-copy {
-            margin-top: 14px;
-            padding-top: 12px;
-            border-top: 1px solid #ddd;
-            color: #888;
-            font-size: 0.8rem;
-            display: block !important;
-        }
-
-        @media (max-width: 768px) {
-            .accesos-grid {
-                grid-template-columns: 1fr;
-            }
-            .franja-beneficios {
-                flex-direction: column;
-                align-items: center;
-            }
-            header h1 { font-size: 1.9em; }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .accesos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-
-    </style>
+    <title>Mrs. Green Spoon - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
-    <header>
-        <img src="img/logo.png" alt="Logo Mrs. GS" width="250">
-        <h1>Mrs. Green Spoon</h1>
-        <p>Menos desperdicio, más sabor</p>
+    <header class="header-principal">
+
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo Mrs. GS">
+
+            <div class="logo-texto">
+                <h1>Mrs. Green Spoon</h1>
+                <p>Menos desperdicio, más sabor</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="form_pedido.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
 
-    
+
+
 
     <main>
         <section class="seccion-bienvenida">
-            <h2>Hola, Usuario </h2>
-            <h3>Bienvenido a EcoPlato</h3>
+            <h2>Bienvenido a Mrs. Green Spoon</h2>
+
             <p>
-                Aquí encontrarás alimentos de calidad a precios accesibles,
-                ayudando a reducir el desperdicio de comida.
+                Descubre alimentos de calidad a precios accesibles, ayudando
+                a reducir el desperdicio alimentario y promoviendo un consumo
+                más responsable.
             </p>
 
             <h3>Nuestro propósito</h3>
+
             <p>
-                Buscamos cuidar el medio ambiente y apoyar a las personas,
-                rescatando alimentos que aún pueden consumirse y dándoles una segunda oportunidad.
+                En Mrs. Green Spoon creemos que cada alimento merece una
+                segunda oportunidad. Nuestro objetivo es reducir el desperdicio
+                de comida ofreciendo productos de calidad, accesibles y con
+                impacto positivo para las personas y el medio ambiente.
             </p>
         </section>
-        
+
         <section class="seccion-accesos">
             <h3><i class="fa-solid fa-bolt"></i>Accesos rápidos</h3>
             <div class="accesos-grid">
@@ -400,7 +101,7 @@
 
 
     <footer>
-        <p><i class="fa-solid fa-envelope"></i> Contacto: contacto@greenspoon.com</p>
+        <p><i class="fa-solid fa-envelope"></i> Contacto: contacto@mrsgreenspoon.com</p>
         <p><i class="fa-solid fa-phone"></i> Teléfono: 987654321</p>
         <p><i class="fa-solid fa-share-nodes"></i> Redes sociales:</p>
 
@@ -417,8 +118,11 @@
             </a>
         </ul>
 
-        <p class="footer-copy">2026 Mrs.GS — Todos los derechos reservados</p>
+        <p class="footer-copy">
+            2026 Mrs. Green Spoon — Todos los derechos reservados
+        </p>
     </footer>
 
 </body>
+
 </html>
