@@ -2,65 +2,103 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoPlato - Pedido</title>
+    <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 
-    <header>
-        <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
+    <header class="header-principal">
+        <div class="logo-area">
+            <img src="img/logo.png" alt="Logo EcoPlato">
+            <div class="logo-texto">
+                <h1>EcoPlato</h1>
+                <p>Menos desperdicio, más sabor</p>
+            </div>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="menu.html">Menú</a></li>
+                <li><a href="form_pedido.html">Pedido</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
+    <main class="contenedor-principal">
+        <h2>Realiza tu Pedido</h2>
+        <p>Rescata comida deliciosa a un súper precio y ayuda al planeta.</p>
+        
+        <form action="pedidos.html" class="formulario-grid">
+            
+            <div class="campo">
+                <label for="nombre">Nombre completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="campo">
+                <label for="telefono">Teléfono celular:</label>
+                <input type="text" id="telefono" name="telefono" required>
+            </div>
 
-    <hr>
+            <div class="campo">
+                <label for="tipo_pedido">Modalidad de entrega:</label>
+                <select id="tipo_pedido" name="tipo_pedido" style="padding: 10px; border: 1px solid #cccccc; border-radius: 6px; font-family: inherit; outline: none; background: white;" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="delivery">Delivery</option>
+                    <option value="recojo">Recojo en local</option>
+                </select>
+            </div>
+            
+            <div class="campo">
+                <label for="direccion">Dirección exacta (Si elegiste Delivery):</label>
+                <input type="text" id="direccion" name="direccion">
+            </div>
+            
+            <div class="campo opciones-platos">
+                <label>Platos disponibles para rescatar hoy:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="platos" value="hamburguesa"> Hamburguesa Urbana (S/ 10.00)</label>
+                    <label><input type="checkbox" name="platos" value="ensalada"> Ensalada Bosque Urbano (S/ 8.00)</label>
+                    <label><input type="checkbox" name="platos" value="pizza"> Pizza Huella Cero (S/ 12.00)</label>
+                    <label><input type="checkbox" name="platos" value="wrap"> Wrap de Pollo (S/ 9.00)</label>
+                </div>
+            </div>
+            
+            <div class="campo">
+                <label for="metodo_pago">Método de pago:</label>
+                <select id="metodo_pago" name="metodo_pago" style="padding: 10px; border: 1px solid #cccccc; border-radius: 6px; font-family: inherit; outline: none; background: white;" required>
+                    <option value="yape">Yape / Plin</option>
+                    <option value="tarjeta">Tarjeta</option>
+                    <option value="efectivo">Efectivo</option>
+                </select>
+            </div>
 
-    <main>
-        <h2>Formulario de Pedido</h2>
-        <form action="pedidos.html">
-            <label>Nombre del cliente (n):</label><br>
-            <input type="text" name="n"><br><br>
+            <div class="campo">
+                <label for="comentarios">Indicaciones para el chef / repartidor:</label>
+                <input type="text" id="comentarios" name="comentarios">
+            </div>
             
-            <label>Direccion de entrega (d):</label><br>
-            <input type="text" name="d"><br><br>
-            
-            <label>Telefono de contacto (t):</label><br>
-            <input type="text" name="t"><br><br>
-            
-            <label>Seleccion de platos (p):</label><br>
-            <input type="checkbox" name="p" value="1"> Opcion 1<br>
-            <input type="checkbox" name="p" value="2"> Opcion 2<br><br>
-            
-            <label>Cantidad (c):</label><br>
-            <input type="number" name="c"><br><br>
-            
-            <input type="submit" value="Enviar Pedido">
+            <div class="campo-boton">
+                <input type="submit" value="Confirmar Pedido" class="btn-enviar">
+            </div>
         </form>
     </main>
-
-    <hr>
 
     <footer>
         <p>Contacto: contacto@ecoplato.com</p>
         <p>Teléfono: 987654321</p>
         <p>Redes sociales:</p>
         <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>WhatsApp</li>
+            <li><a href="#" class="social-item">FB</a></li>
+            <li><a href="#" class="social-item">IG</a></li>
+            <li><a href="#" class="social-item">WA</a></li>
         </ul>
-
-        <p>2026 EcoPlato - Todos los derechos reservados</p>
+        <p class="footer-copy">2026 EcoPlato - Todos los derechos reservados</p>
     </footer>
 
 </body>
