@@ -1,0 +1,1009 @@
+/* ==========================
+   RESET GENERAL
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ==========================
+   BODY GENERAL
+========================== */
+
+body {
+  font-family: "PT Sans", Verdana, sans-serif;
+  color: #333333;
+  line-height: 1.7;
+
+  background-image: url("../img/Background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================
+   HEADER TIPO COPRA
+========================== */
+
+.header-principal {
+  background-color: #82a94e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-area img {
+  width: 40px;
+  animation: aparecerLogo 0.8s ease;
+}
+
+.logo-texto h1 {
+  color: #ffffff;
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.logo-texto p {
+  color: #ebf4d6;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #a8c167;
+  transform: scale(1.05);
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+
+@keyframes aparecerLogo {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes aparecerContenido {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes moverCarrusel {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-950px);
+  }
+}
+
+/* ==========================
+   MAIN
+========================== */
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 36px 30px;
+
+  background-color: rgba(255, 255, 255, 0.92);
+  border-radius: 16px;
+
+  animation: aparecerContenido 0.7s ease;
+
+  flex: 1;
+}
+
+/* TITULOS */
+
+main h2 {
+  font-family: Georgia, serif;
+  color: #82a94e;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+main h3 {
+  color: #5b6c3a;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+main p {
+  margin-bottom: 15px;
+  color: #555555;
+}
+
+.seccion-bienvenida h2 {
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #82a94e;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.seccion-bienvenida p {
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.seccion-proposito h3 {
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5b6c3a;
+  margin-bottom: 14px;
+}
+
+.seccion-proposito p {
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* ==========================
+   SECCIONES
+========================== */
+
+.seccion-bienvenida {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 35px;
+  border-bottom: 3px solid #e0e8d0;
+}
+
+.bienvenida-texto {
+  flex: 1;
+}
+
+.bienvenida-video video {
+  width: 100%;
+  max-width: 500px;
+
+  border-radius: 18px;
+
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+
+  object-fit: cover;
+}
+
+.seccion-proposito {
+  padding: 28px 0;
+  border-bottom: 3px solid #e0e8d0;
+}
+
+.seccion-accesos {
+  padding-top: 20px;
+}
+
+/* ==========================
+   CARDS DE ACCESOS
+========================== */
+
+.accesos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.acceso-card {
+  background-color: #ffffff;
+  border: 1px solid #d6e8b4;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.acceso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+  border-color: #82a94e;
+}
+
+.acceso-icono {
+  width: 48px;
+  height: 48px;
+  background-color: #ebf4d6;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.3rem;
+  color: #5b6c3a;
+
+  transition: 0.3s ease;
+}
+
+.acceso-card:hover .acceso-icono {
+  background-color: #82a94e;
+  color: #ffffff;
+  transform: rotate(8deg) scale(1.1);
+}
+
+.acceso-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5b6c3a;
+}
+
+.acceso-card p {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.acceso-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #82a94e;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: auto;
+  transition: 0.3s ease;
+}
+
+.acceso-card:hover .acceso-link {
+  color: #5b6c3a;
+  gap: 10px;
+}
+
+/* ==========================
+   OFERTAS DESTACADAS - INDEX
+========================== */
+
+.seccion-destacadas {
+  padding-top: 28px;
+}
+
+.carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.carrusel-ofertas {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: moverCarrusel 42s linear infinite;
+}
+
+.carrusel-contenedor:hover .carrusel-ofertas {
+  animation-play-state: paused;
+}
+
+.destacada-card {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.destacada-card {
+  min-width: 320px;
+  flex-shrink: 0;
+
+  background-color: #ffffff;
+  border: 1px solid #d6e8b4;
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destacada-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+}
+
+.destacada-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.destacada-card h4 {
+  color: #5b6c3a;
+  padding: 14px 16px 4px;
+  font-size: 1rem;
+}
+
+.destacada-card p {
+  padding: 0 16px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.destacada-card span {
+  display: block;
+  padding: 0 16px 16px;
+  color: #82a94e;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn-ver-ofertas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 18px;
+  padding: 10px 18px;
+
+  background-color: #82a94e;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-ver-ofertas:hover {
+  background-color: #5b6c3a;
+  transform: translateY(-2px);
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer {
+  background-color: #f5f7f1;
+  color: #5b6c3a;
+  padding: 40px 60px 20px;
+  margin-top: 50px;
+  border-top: 2px solid #ebf4d6;
+}
+
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr 1fr 1fr;
+  gap: 120px;
+  text-align: left;
+  max-width: 1600px;
+  margin: 0 auto 30px;
+  padding: 0 80px;
+}
+
+.footer-logo {
+  width: 180px;
+  margin-bottom: 12px;
+}
+
+.footer-marca {
+  justify-self: start;
+}
+
+.footer-contenido h3,
+.footer-contenido h4 {
+  color: #5b6c3a;
+  margin-bottom: 10px;
+}
+
+.footer-contenido p,
+.footer-contenido a {
+  color: #5b6c3a;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-contacto p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contacto i {
+  font-size: 1rem;
+}
+
+.footer-contenido a:hover {
+  color: #82a94e;
+}
+
+.redes-iconos {
+  display: flex;
+  gap: 18px;
+}
+
+.redes-iconos a {
+  font-size: 1.4rem;
+  color: #5b6c3a;
+  transition: 0.3s ease;
+}
+
+.redes-iconos a:hover {
+  color: #82a94e;
+  transform: translateY(-3px);
+}
+
+.footer-inferior {
+  border-top: 1px solid #dddddd;
+  padding-top: 14px;
+  text-align: center;
+  color: #888888;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 1024px) {
+  .footer-contenido {
+    gap: 35px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-contenido {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+    padding: 0 20px;
+  }
+
+  .footer-marca,
+  .footer-contacto,
+  .footer-ayuda,
+  .footer-redes {
+    justify-self: center;
+    align-items: center;
+  }
+
+  .footer-contacto p {
+    justify-content: center;
+  }
+
+  .redes-iconos {
+    justify-content: center;
+  }
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 768px) {
+  .header-principal {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .accesos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  main h2 {
+    font-size: 1.8rem;
+  }
+
+  main h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .accesos-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destacadas-grid {
+    flex-direction: column;
+  }
+}
+
+/* ==========================
+   OFERTAS
+========================== */
+
+.seccion-ofertas {
+  margin-top: 30px;
+}
+
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.oferta-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #dce7c4;
+  border-radius: 14px;
+  overflow: hidden;
+
+  min-height: 180px;
+
+  box-shadow: 0 2px 14px rgba(91, 108, 58, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.oferta-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+}
+
+.oferta-info {
+  padding: 24px;
+  flex: 1;
+}
+
+.oferta-info h3 {
+  color: #5b6c3a;
+  margin-bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.oferta-info p {
+  color: #666;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.oferta-card img {
+  width: 180px;
+  object-fit: cover;
+  background-color: #e8efd7;
+}
+
+.precio-box {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.precio-original {
+  text-decoration: line-through;
+  color: #888;
+  font-size: 1rem;
+}
+
+.precio-oferta {
+  color: #82a94e;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ==========================
+   BOTÓN CARRITO
+========================== */
+
+.btn-carrito {
+  margin-top: 12px;
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 8px;
+
+  background-color: #82a94e;
+  color: white;
+
+  font-size: 0.95rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-carrito:hover {
+  background-color: #5b6c3a;
+  transform: translateY(-2px);
+
+  box-shadow: 0 4px 12px rgba(91, 108, 58, 0.25);
+}
+
+.btn-carrito i {
+  transition: transform 0.3s ease;
+}
+
+.btn-carrito:hover i {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+/* ==========================
+   FORMULARIOS (Login / Registro)
+========================== */
+
+.form-auth {
+  max-width: 380px;
+  margin: 25px auto;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background-color: #ffffff;
+  padding: 30px;
+  border: 1px solid #d6e8b4;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(91, 108, 58, 0.08);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #5b6c3a;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #82a94e;
+  box-shadow: 0 0 0 3px rgba(130, 169, 78, 0.2);
+}
+
+.btn-auth {
+  margin-top: 10px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #82a94e;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
+}
+
+.btn-auth:hover {
+  background-color: #5b6c3a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 108, 58, 0.25);
+}
+
+.registro-link {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.registro-link a {
+  color: #82a94e;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.registro-link a:hover {
+  color: #5b6c3a;
+  text-decoration: underline;
+}
+
+/* ==========================
+   MENU.HTML
+========================== */
+
+.menu-presentacion {
+  margin-bottom: 25px;
+  border-bottom: 3px solid #e0e8d0;
+  padding-bottom: 24px;
+}
+
+.menu-presentacion h2 {
+  font-family: "IM Fell Double Pica SC", serif;
+  color: #82a94e;
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+
+.menu-presentacion p {
+  font-size: 1.1rem;
+  font-family: "Calistoga", serif;
+  color: #555555;
+  line-height: 1.7;
+}
+
+.menu-categoria-bloque {
+  margin-top: 40px;
+}
+
+.menu-titulo-categoria {
+  font-family: "IM Fell Double Pica SC", serif;
+  color: #5b6c3a;
+  font-size: 2rem;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: entradaCategoria 0.8s ease both;
+}
+
+.menu-titulo-categoria i {
+  color: #82a94e;
+  transition: 0.3s ease;
+}
+
+.menu-titulo-categoria:hover i {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.menu-card {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #d6e8b4;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
+  transition: 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 26px rgba(91, 108, 58, 0.2);
+}
+
+.menu-card img {
+  width: 100%;
+  height: 175px;
+  object-fit: cover;
+  transition: 0.4s ease;
+}
+
+.menu-card:hover img {
+  transform: scale(1.05);
+}
+
+.menu-card h4 {
+  color: #5b6c3a;
+  padding: 15px 18px 5px;
+  font-size: 1.15rem;
+}
+
+.menu-card p {
+  color: #666666;
+  padding: 0 18px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.menu-card .menu-precio {
+  display: block;
+  padding: 10px 18px;
+  color: #82a94e;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.menu-card button {
+  margin: 0 18px 18px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #82a94e;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.menu-card button i {
+  transition: transform 0.3s ease;
+}
+
+.menu-card button:hover {
+  background-color: #6f913f;
+  transform: translateY(-3px);
+}
+
+.menu-card button:hover i {
+  transform: rotate(-12deg) scale(1.15);
+}
+
+.menu-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background-color: #82a94e;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.menu-final {
+  margin-top: 60px;
+  text-align: center;
+  background-color: #f5f7f1;
+  border: 2px solid #dce8c2;
+  border-radius: 20px;
+  padding: 40px 25px;
+}
+
+.menu-final h3 {
+  font-family: "IM Fell Double Pica SC", serif;
+  color: #5b6c3a;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.menu-final p {
+  color: #666666;
+  font-size: 1.05rem;
+  font-family: "Calistoga", serif;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+.menu-final a {
+  display: inline-block;
+  background-color: #82a94e;
+  color: white;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.menu-final a:hover {
+  background-color: #6f913f;
+  transform: translateY(-3px);
+}
+
+@keyframes entradaCategoria {
+  from {
+    opacity: 0;
+    transform: translateX(-18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-presentacion h2 {
+    font-size: 2.3rem;
+  }
+
+  .menu-titulo-categoria {
+    font-size: 1.7rem;
+  }
+}

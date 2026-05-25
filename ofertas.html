@@ -1,142 +1,357 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <title>Mrs. Green Spoon - Ofertas</title>
+    <link rel="stylesheet" href="css/style.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <title>EcoPlato - Ofertas</title>
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
+    <header class="header-principal">
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
 
-    <header> <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Pedido</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
-
-    <hr>
-
     <main>
-        <marquee>
-            <h2>Ofertas Especiales solo por tiempo limitado!! ||| Encuentra la mejores ofertas solo aquí!!</h2>
-        </marquee>
-        <p>Productos con mayor descuento disponibles por tiempo limitado.</p>
+      <section class="hero-ofertas">
+        <h2>🌱 Ofertas que Salvan Ingredientes</h2>
 
-        <table border="1">
-            <tr>
-                <th>Producto</th>
-                <th>Descripción</th>
-                <th>Precio original</th>
-                <th>Precio oferta</th>
-                <th>Disponibilidad</th>
-            </tr>
+        <p>
+          En <strong>Mrs. Green Spoon</strong> creemos que los buenos alimentos
+          merecen una segunda oportunidad. Estas ofertas han sido preparadas
+          utilizando ingredientes frescos recuperados responsablemente, ayudando
+          a reducir el desperdicio alimentario sin comprometer el sabor ni la
+          calidad.
+        </p>
+      </section>
 
-            <tr>
-                <td>Arroz con pollo</td>
-                <td>Plato casero tradicional</td>
-                <td>15.00</td>
-                <td>8.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+      <section class="seccion-ofertas">
+        <div class="ofertas-grid">
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍛 Bowl Renacer Verde</h3>
+              <p>
+                Base de arroz integral con vegetales asados de temporada, hojas
+                frescas y salsa de hierbas recuperadas del día.
+              </p>
 
-            <tr>
-                <td>Ensalada fresca</td>
-                <td>Vegetales orgánicos</td>
-                <td>10.00</td>
-                <td>5.00</td>
-                <td>Oferta limitada</td>
-            </tr>
+              <div class="precio-box">
+                <span class="precio-original">S/25.00</span>
+                <span class="precio-oferta">S/15.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
 
-            <tr>
-                <td>Pollo a la brasa</td>
-                <td>Incluye papas</td>
-                <td>30.00</td>
-                <td>18.00</td>
-                <td>Pocas porciones</td>
-            </tr>
+            <img src="img/Bowl Renacer Verde.jpg" alt="Bowl" />
+          </article>
 
-            <tr>
-                <td>Jugo natural</td>
-                <td>Frutas frescas</td>
-                <td>8.00</td>
-                <td>4.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🥔 Croquetas Reborn</h3>
+              <p>
+                Croquetas crujientes de papa, queso y vegetales acompañadas de
+                salsa casera.
+              </p>
 
-            <tr>
-                <td>Combo saludable</td>
-                <td>Ensalada + jugo</td>
-                <td>20.00</td>
-                <td>11.00</td>
-                <td>Oferta especial</td>
-            </tr>
+              <div class="precio-box">
+                <span class="precio-original">S/12.00</span>
+                <span class="precio-oferta">S/6.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
 
-            <tr>
-                <td>Sopa casera</td>
-                <td>Sopa del día</td>
-                <td>12.00</td>
-                <td>6.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+            <img src="img/Croquetas Reborn.png" alt="Croquetas" />
+          </article>
 
-            <tr>
-                <td>Pasta al pesto</td>
-                <td>Pasta con salsa natural</td>
-                <td>18.00</td>
-                <td>10.00</td>
-                <td>Oferta limitada</td>
-            </tr>
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍗 Wrap Circular de Pollo</h3>
+              <p>
+                Pollo marinado acompañado de vegetales crocantes y crema de
+                yogurt con limón en tortilla artesanal.
+              </p>
 
-            <tr>
-                <td>Hamburguesa casera</td>
-                <td>Carne artesanal</td>
-                <td>14.00</td>
-                <td>9.00</td>
-                <td>Pocas porciones</td>
-            </tr>
+              <div class="precio-box">
+                <span class="precio-original">S/30.00</span>
+                <span class="precio-oferta">S/18.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
 
-            <tr>
-                <td>Batido de frutas</td>
-                <td>Frutas mixtas</td>
-                <td>9.00</td>
-                <td>5.00</td>
-                <td>Últimas unidades</td>
-            </tr>
+            <img src="img/Wrap de Pollo.png" alt="Wrap de Pollo" />
+          </article>
 
-            <tr>
-                <td>Pizza personal</td>
-                <td>Queso y tomate</td>
-                <td>16.00</td>
-                <td>10.00</td>
-                <td>Oferta especial</td>
-            </tr>
-        </table>
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🥗 Ensalada Bosque Urbano</h3>
+              <p>
+                Mix de hojas verdes, frutas de temporada, semillas tostadas y
+                vinagreta cítrica.
+              </p>
 
-        <br>
+              <div class="precio-box">
+                <span class="precio-original">S/8.00</span>
+                <span class="precio-oferta">S/4.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
 
-        <a href="menu.html">Ver menú</a>
-        <a href="form_pedido.html">Realizar pedido</a>
+            <img src="img/Ensalada Bosque Urbano.jpg" alt="Ensalada" />
+          </article>
 
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍝 Pasta Segunda Vida</h3>
+              <p>
+                Pasta fresca salteada con salsa hecha de tomates maduros,
+                vegetales caramelizados y queso rallado.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/18.00</span>
+                <span class="precio-oferta">S/10.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Pasta Segunda Vida.png" alt="Pasta" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍕 Pizza Huella Cero</h3>
+              <p>
+                Pizza artesanal con mezcla de vegetales rostizados, queso
+                fundido y aceite de albahaca.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/16.00</span>
+                <span class="precio-oferta">S/10.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Pizza Huella Cero.jpg" alt="Pizza" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍔 Hamburguesa Raíz Urbana</h3>
+              <p>
+                Hamburguesa de lentejas y vegetales asados, con pan artesanal y
+                mayonesa de ajo rostizado.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/20.00</span>
+                <span class="precio-oferta">S/12.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Hamburguesa Urbana.jpg" alt="Hamburguesa" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🌮 Tacos Tierra Viva</h3>
+              <p>
+                Tacos de vegetales ahumados con crema de palta y encurtidos
+                caseros.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/18.00</span>
+                <span class="precio-oferta">S/9.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Tacos Tierra Viva.jpg" alt="Tacos" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍯 Bowl Dulce Rescate</h3>
+              <p>
+                Yogurt natural con frutas maduras, granola artesanal y miel
+                local.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/24.00</span>
+                <span class="precio-oferta">S/14.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Bowl Dulce Rescate.png" alt="Dulce" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🥪 Sándwich Campo Circular</h3>
+              <p>
+                Pan artesanal relleno de vegetales grillados, pollo desmenuzado
+                y pesto ecológico.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/14.00</span>
+                <span class="precio-oferta">S/8.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Sandwich Campo Circular.png" alt="Sandwich" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🍚 Risotto del Mercado</h3>
+              <p>
+                Risotto cremoso preparado con ingredientes frescos recuperados
+                del mercado del día.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/17.00</span>
+                <span class="precio-oferta">S/9.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Risotto Del Mercado.png" alt="Risotto" />
+          </article>
+
+          <article class="oferta-card">
+            <div class="oferta-info">
+              <h3>🥄 Sopa EcoHarvest</h3>
+              <p>
+                Crema caliente elaborada con verduras recuperadas diariamente y
+                especias naturales.
+              </p>
+
+              <div class="precio-box">
+                <span class="precio-original">S/10.00</span>
+                <span class="precio-oferta">S/5.00</span>
+              </div>
+              <button class="btn-carrito">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Agregar
+              </button>
+            </div>
+
+            <img src="img/Sopa EcoHarvest.jpg" alt="Sopa" />
+          </article>
+        </div>
+      </section>
     </main>
 
-    <hr>
-
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>2026 EcoPlato</p>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo" />
+        </div>
+
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
+            <a href="https://facebook.com" target="_blank" class="social-item">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/987654321"
+              target="_blank"
+              class="social-item"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>

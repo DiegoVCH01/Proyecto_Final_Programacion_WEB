@@ -1,65 +1,224 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>EcoPlato - Inicio</title>
-</head>
-<body>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <meta charset="UTF-8" />
+    <title>Mrs. Green Spoon - Inicio</title>
+    <link rel="stylesheet" href="css/style.css" />
 
-    <header>
-        <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header class="header-principal">
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
+
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Formulario</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </nav>
-
-    <hr>
-
     <main>
-        <h2>Hola, Usuario </h2>
-        <h3>Bienvenido a EcoPlato</h3>
-        <p>
-            Aquí encontrarás alimentos de calidad a precios accesibles,
-            ayudando a reducir el desperdicio de comida.
-        </p>
+      <section class="seccion-bienvenida">
+        <div class="bienvenida-texto">
+          <h2>Bienvenido a Mrs. Green Spoon</h2>
 
+          <p>
+            Descubre alimentos de calidad a precios accesibles, ayudando a
+            reducir el desperdicio alimentario y promoviendo el aumento del
+            consumo responsable.
+          </p>
+        </div>
+
+        <div class="bienvenida-video">
+          <video autoplay muted loop playsinline>
+            <source src="video/comida.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </section>
+
+      <section class="seccion-proposito">
         <h3>Nuestro propósito</h3>
-        <p>
-            Buscamos cuidar el medio ambiente y apoyar a las personas,
-            rescatando alimentos que aún pueden consumirse y dándoles una segunda oportunidad.
-        </p>
 
-        <h3>Accesos rápidos</h3>
-        <ul>
-            <li><a href="menu.html">Ver menú de comidas</a></li>
-            <li><a href="form_pedido.html">Realizar un pedido</a></li>
-            <li><a href="ofertas.html">Ver ofertas especiales</a></li>
-        </ul>
+        <p>
+          En Mrs. Green Spoon creemos que cada alimento merece una segunda
+          oportunidad. Nuestro objetivo es reducir el desperdicio de comida
+          ofreciendo productos de calidad, accesibles y con impacto positivo
+          para las personas y el medio ambiente.
+        </p>
+      </section>
+
+      <section class="seccion-accesos">
+        <h3><i class="fa-solid fa-bolt"></i>Accesos rápidos</h3>
+        <div class="accesos-grid">
+          <a href="menu.html" class="acceso-card">
+            <div class="acceso-icono">
+              <i class="fa-solid fa-bowl-food"></i>
+            </div>
+            <h4>Ver menú de comidas</h4>
+            <p>
+              Descubre los platillos del día preparados con ingredientes
+              frescos.
+            </p>
+            <span class="acceso-link">
+              Ver menú <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <a href="form_pedido.html" class="acceso-card">
+            <div class="acceso-icono">
+              <i class="fa-solid fa-cart-plus"></i>
+            </div>
+            <h4>Realizar un pedido</h4>
+            <p>
+              Elige tus favoritos y recíbelos rápido. Simple y sin
+              complicaciones.
+            </p>
+            <span class="acceso-link">
+              Pedir ahora <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+
+          <a href="ofertas.html" class="acceso-card">
+            <div class="acceso-icono">
+              <i class="fa-solid fa-percent"></i>
+            </div>
+            <h4>Ver ofertas especiales</h4>
+            <p>
+              Descuentos diarios en productos que necesitan un hogar urgente.
+            </p>
+            <span class="acceso-link">
+              Ver ofertas <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="seccion-destacadas">
+        <h3><i class="fa-solid fa-star"></i> Ofertas destacadas</h3>
+
+        <div class="carrusel-contenedor">
+          <div class="carrusel-ofertas">
+            <article class="destacada-card">
+              <img src="img/Bowl Renacer Verde.jpg" alt="Bowl Renacer Verde" />
+              <h4>Bowl Renacer Verde</h4>
+              <p>Arroz integral con vegetales asados y salsa de hierbas.</p>
+              <span>S/15.00</span>
+            </article>
+
+            <article class="destacada-card">
+              <img src="img/Pizza Huella Cero.jpg" alt="Pizza Huella Cero" />
+              <h4>Pizza Huella Cero</h4>
+              <p>Pizza artesanal con vegetales rostizados y queso fundido.</p>
+              <span>S/10.00</span>
+            </article>
+
+            <article class="destacada-card">
+              <img
+                src="img/Hamburguesa Urbana.jpg"
+                alt="Hamburguesa Raíz Urbana"
+              />
+              <h4>Hamburguesa Raíz Urbana</h4>
+              <p>Hamburguesa de lentejas, vegetales asados y pan artesanal.</p>
+              <span>S/12.00</span>
+            </article>
+
+            <article class="destacada-card">
+              <img src="img/Bowl Renacer Verde.jpg" alt="Bowl Renacer Verde" />
+              <h4>Bowl Renacer Verde</h4>
+              <p>Arroz integral con vegetales asados y salsa de hierbas.</p>
+              <span>S/15.00</span>
+            </article>
+
+            <article class="destacada-card">
+              <img src="img/Pizza Huella Cero.jpg" alt="Pizza Huella Cero" />
+              <h4>Pizza Huella Cero</h4>
+              <p>Pizza artesanal con vegetales rostizados y queso fundido.</p>
+              <span>S/10.00</span>
+            </article>
+
+            <article class="destacada-card">
+              <img
+                src="img/Hamburguesa Urbana.jpg"
+                alt="Hamburguesa Raíz Urbana"
+              />
+              <h4>Hamburguesa Raíz Urbana</h4>
+              <p>Hamburguesa de lentejas, vegetales asados y pan artesanal.</p>
+              <span>S/12.00</span>
+            </article>
+          </div>
+        </div>
+
+        <a href="ofertas.html" class="btn-ver-ofertas">
+          Ver todas las ofertas <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </section>
     </main>
 
-    <hr>
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>Redes sociales:</p>
-        <ul>
-            <li>Facebook</li>
-            <li>Instagram</li>
-            <li>WhatsApp</li>
-        </ul>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo">
+        </div>
 
-        <p>2026 EcoPlato - Todos los derechos reservados</p>
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
+            <a href="https://facebook.com" target="_blank" class="social-item">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/987654321"
+              target="_blank"
+              class="social-item"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>
