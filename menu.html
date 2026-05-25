@@ -1,107 +1,380 @@
 <!doctype html>
 <html lang="es">
   <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
     <meta charset="UTF-8" />
-    <title>Menú de Comidas</title>
+    <title>Mrs. Green Spoon - Menu</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <img src="img/logo.png" alt="Logo EcoPlato" width="250" />
-      <h1>EcoPlato</h1>
-      <p>Menos desperdicio, más sabor</p>
+    <header class="header-principal">
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
+
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Formulario</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
-    <nav>
-      <ul>
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="menu.html">Menú</a></li>
-        <li><a href="form_pedido.html">Pedido</a></li>
-        <li><a href="ofertas.html">Ofertas</a></li>
-        <li><a href="pedidos.html">Pedidos</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-    <hr />
 
-    <main>
-      <h2>Lista de Productos Disponibles</h2>
+    <main class="menu-main">
+      <section class="menu-presentacion">
+        <h2>
+          <i class="fa-solid fa-utensils"></i>
+          Menú de comidas
+        </h2>
 
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Nombre del Producto</th>
-            <th>Descripción</th>
-            <th>Precio Original</th>
-            <th>Precio con Descuento</th>
-            <th>Acción</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Pan Integral</td>
-            <td>Pan de trigo integral, horneado del día anterior</td>
-            <td>S/ 8.00</td>
-            <td>S/ 3.50</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Leche Fresca</td>
-            <td>Leche entera, próxima a vencer, refrigerada</td>
-            <td>S/ 4.50</td>
-            <td>S/ 2.00</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Manzanas Rojas</td>
-            <td>Manzanas frescas con pequeños golpes, ideales para jugo</td>
-            <td>S/ 6.00</td>
-            <td>S/ 3.00</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Pollo Entero</td>
-            <td>Pollo fresco, debe consumirse hoy</td>
-            <td>S/ 18.00</td>
-            <td>S/ 10.00</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Arroz Blanco (1kg)</td>
-            <td>Arroz de grano largo, empaque ligeramente dañado</td>
-            <td>S/ 5.50</td>
-            <td>S/ 3.50</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-          <tr>
-            <td>Yogur Natural</td>
-            <td>Yogur sin azúcar, próximo a vencer</td>
-            <td>S/ 7.00</td>
-            <td>S/ 3.50</td>
-            <td>
-              <button>Añadir al Pedido</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-      <br />
-      <a href="index.html">Ir al inicio</a>
+        <p>
+          Explora nuestras opciones disponibles preparadas con ingredientes
+          frescos, accesibles y pensadas para reducir el desperdicio
+          alimentario.
+        </p>
+      </section>
+
+      <section class="menu-categoria-bloque">
+        <h3 class="menu-titulo-categoria">
+          <i class="fa-solid fa-bowl-food"></i>
+          Bowls y ensaladas
+        </h3>
+
+        <div class="menu-grid">
+          <!-- CARD 1 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Popular </span>
+            <img src="img/bowl.jpg" alt="Bowl Renacer Verde" />
+
+            <div class="menu-info">
+              <h4>Bowl Renacer Verde</h4>
+
+              <p>Arroz integral con vegetales asados y salsa de hierbas.</p>
+
+              <span class="menu-precio">S/ 15.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="menu-card">
+            <img src="img/ensalada.jpg" alt="Ensalada Bosque Urbano" />
+
+            <div class="menu-info">
+              <h4>Ensalada Bosque Urbano</h4>
+
+              <p>Mezcla fresca de verduras, queso y aderezo natural.</p>
+
+              <span class="menu-precio">S/ 13.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Nuevo </span>
+            <img src="img/wrap.jpg" alt="Wrap Circular" />
+
+            <div class="menu-info">
+              <h4>Wrap Circular</h4>
+
+              <p>Tortilla artesanal rellena con vegetales y pollo.</p>
+
+              <span class="menu-precio">S/ 14.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-categoria-bloque">
+        <h3 class="menu-titulo-categoria">
+          <i class="fa-solid fa-pizza-slice"></i>
+          Platos principales
+        </h3>
+
+        <div class="menu-grid">
+          <!-- CARD 4 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Oferta </span>
+            <img src="img/pizza.jpg" alt="Pizza Huella Cero" />
+
+            <div class="menu-info">
+              <h4>Pizza Huella Cero</h4>
+
+              <p>Pizza artesanal con vegetales rostizados y queso fundido.</p>
+
+              <span class="menu-precio">S/ 10.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 5 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Popular </span>
+            <img src="img/hamburguesa.jpg" alt="Hamburguesa Raíz Urbana" />
+
+            <div class="menu-info">
+              <h4>Hamburguesa Raíz Urbana</h4>
+
+              <p>Hamburguesa de lentejas con vegetales frescos.</p>
+
+              <span class="menu-precio">S/ 12.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 6 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Recomendado </span>
+            <img src="img/pasta.jpg" alt="Pasta EcoFresh" />
+
+            <div class="menu-info">
+              <h4>Pasta EcoFresh</h4>
+
+              <p>Pasta cremosa preparada con ingredientes reutilizados.</p>
+
+              <span>S/ 16.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-categoria-bloque">
+        <h3 class="menu-titulo-categoria">
+          <i class="fa-solid fa-cheese"></i>
+          Piqueos y snacks
+        </h3>
+
+        <div class="menu-grid">
+          <!-- CARD 7 -->
+          <article class="menu-card">
+            <img src="img/papas.jpg" alt="Papas Crocantes" />
+
+            <div class="menu-info">
+              <h4>Papas Crocantes</h4>
+
+              <p>Papas horneadas acompañadas de salsa casera.</p>
+
+              <span class="menu-precio">S/ 8.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 8 -->
+          <article class="menu-card">
+            <img src="img/nuggets.jpg" alt="Nuggets Verdes" />
+
+            <div class="menu-info">
+              <h4>Nuggets Verdes</h4>
+
+              <p>Nuggets artesanales preparados con vegetales mixtos.</p>
+
+              <span class="menu-precio">S/ 9.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 9 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Oferta </span>
+            <img src="img/tacos.jpg" alt="Tacos Naturales" />
+
+            <div class="menu-info">
+              <h4>Tacos Naturales</h4>
+
+              <p>Tacos rellenos con vegetales frescos y pollo.</p>
+
+              <span class="menu-precio">S/ 11.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-categoria-bloque">
+        <h3 class="menu-titulo-categoria">
+          <i class="fa-solid fa-glass-water"></i>
+          Bebidas naturales
+        </h3>
+
+        <div class="menu-grid">
+          <!-- CARD 10 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Nuevo </span>
+            <img src="img/jugo.jpg" alt="Jugo Natural" />
+
+            <div class="menu-info">
+              <h4>Jugo Natural Fresh</h4>
+
+              <p>Bebida preparada con frutas frescas de temporada.</p>
+
+              <span class="menu-precio">S/ 6.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 11 -->
+          <article class="menu-card">
+            <img src="img/limonada.jpg" alt="Limonada Verde" />
+
+            <div class="menu-info">
+              <h4>Limonada Verde</h4>
+
+              <p>Refrescante limonada artesanal con hierbabuena.</p>
+
+              <span class="menu-precio">S/ 5.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+
+          <!-- CARD 12 -->
+          <article class="menu-card">
+            <span class="menu-badge"> Nuevo </span>
+            <img src="img/batido.jpg" alt="Batido Tropical" />
+
+            <div class="menu-info">
+              <h4>Batido Tropical</h4>
+
+              <p>Batido natural de mango, plátano y avena.</p>
+
+              <span class="menu-precio">S/ 7.00</span>
+
+              <button>
+                <i class="fa-solid fa-basket-shopping"></i>
+                Añadir
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="menu-final">
+        <h3>
+          <i class="fa-solid fa-leaf"></i>
+          ¿No sabes qué elegir?
+        </h3>
+
+        <p>
+          Descubre nuestras ofertas especiales preparadas con ingredientes
+          frescos y opciones sostenibles pensadas para todos.
+        </p>
+
+        <a href="ofertas.html"> Ver ofertas especiales </a>
+      </section>
     </main>
 
-    <hr />
-
     <footer>
-      <p>Contacto: contacto@ecoplato.com</p>
-      <p>Teléfono: 987654321</p>
-      <p>2026 EcoPlato</p>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo" />
+        </div>
+
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
+            <a href="https://facebook.com" target="_blank" class="social-item">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/987654321"
+              target="_blank"
+              class="social-item"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
   </body>
 </html>
