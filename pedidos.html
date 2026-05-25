@@ -4,25 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>EcoPlato - Pedidos</title>
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
 
-    <header> <img src="img/logo.png" alt="Logo EcoPlato" width="250">
-        <h1>EcoPlato</h1>
-        <p>Menos desperdicio, más sabor</p>
-    </header>
+    <header class="header-principal">
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
 
-    <nav>
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
+        </div>
+      </div>
+
+      <nav>
         <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="menu.html">Menú</a></li>
-            <li><a href="form_pedido.html">Pedido</a></li>
-            <li><a href="ofertas.html">Ofertas</a></li>
-            <li><a href="pedidos.html">Pedidos</a></li>
-            <li><a href="login.html">Login</a></li>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Pedido</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
         </ul>
-    </nav>
+      </nav>
+    </header>
 
     <hr>
 
@@ -141,9 +148,47 @@
     <hr>
 
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>2026 EcoPlato</p>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo">
+        </div>
+
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
+            <a href="https://facebook.com" target="_blank" class="social-item">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="https://wa.me/987654321"
+              target="_blank"
+              class="social-item"
+            >
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
 
 </body>
