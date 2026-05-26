@@ -2,9 +2,10 @@
 <html lang="es">
 
 <head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <meta charset="UTF-8">
-    <title>EcoPlato - Pedidos</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>Mrs. Green Spoon - Inicio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -34,114 +35,126 @@
     <hr>
 
     <main>
-        <h2>Pedidos realizados</h2>
-        <p>Historial de pedidos registrados en el sistema.</p>
+        <section class="hero-ofertas">
+      <h2>📋 Pedidos Realizados</h2>
+      <p>Historial de pedidos registrados en el sistema de <strong>Mrs. Green Spoon</strong>. Aquí puedes ver el estado actual de cada pedido.</p>
+    </section>
 
-        <table border="1">
+    <section class="seccion-pedidos">
+      <div class="tabla-contenedor">
+        <table class="tabla-pedidos">
+          <thead>
             <tr>
-                <th>N° Pedido</th>
-                <th>Cliente</th>
-                <th>Productos</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th>Estado</th>
+              <th>N° Pedido</th>
+              <th>Imagen</th>
+              <th>Cliente</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th>Estado</th>
             </tr>
-
+          </thead>
+          <tbody>
             <tr>
-                <td>001</td>
-                <td>Juan Pérez</td>
-                <td>Arroz con pollo</td>
-                <td>2</td>
-                <td>20.00</td>
-                <td>Enviado</td>
+              <td>001</td>
+              <td><img src="img/Bowl Renacer Verde.jpg" alt="Bowl Renacer Verde" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Juan Pérez</td>
+              <td>Bowl Renacer Verde</td>
+              <td>2</td>
+              <td>S/ 30.00</td>
+              <td><span class="estado enviado">Enviado</span></td>
             </tr>
-
             <tr>
-                <td>002</td>
-                <td>María López</td>
-                <td>Ensalada + Jugo</td>
-                <td>1</td>
-                <td>12.00</td>
-                <td>En proceso</td>
+              <td>002</td>
+              <td><img src="img/Croquetas Reborn.png" alt="Croquetas Reborn" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> María López</td>
+              <td>Croquetas Reborn</td>
+              <td>1</td>
+              <td>S/ 6.00</td>
+              <td><span class="estado en-proceso">En proceso</span></td>
             </tr>
-
             <tr>
-                <td>003</td>
-                <td>Carlos Ruiz</td>
-                <td>Pollo a la brasa</td>
-                <td>1</td>
-                <td>25.00</td>
-                <td>Preparando</td>
+              <td>003</td>
+              <td><img src="img/Wrap de Pollo.png" alt="Wrap Circular de Pollo" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Carlos Ruiz</td>
+              <td>Wrap Circular de Pollo</td>
+              <td>1</td>
+              <td>S/ 18.00</td>
+              <td><span class="estado preparando">Preparando</span></td>
             </tr>
-
             <tr>
-                <td>004</td>
-                <td>Ana Torres</td>
-                <td>Ensalada</td>
-                <td>3</td>
-                <td>15.00</td>
-                <td>Enviado</td>
+              <td>004</td>
+              <td><img src="img/Ensalada Bosque Urbano.jpg" alt="Ensalada Bosque Urbano" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Ana Torres</td>
+              <td>Ensalada Bosque Urbano</td>
+              <td>3</td>
+              <td>S/ 12.00</td>
+              <td><span class="estado enviado">Enviado</span></td>
             </tr>
-
             <tr>
-                <td>005</td>
-                <td>Luis Gómez</td>
-                <td>Pollo + arroz</td>
-                <td>2</td>
-                <td>18.00</td>
-                <td>Preparando</td>
+              <td>005</td>
+              <td><img src="img/Pasta Segunda Vida.png" alt="Pasta Segunda Vida" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Luis Gómez</td>
+              <td>Pasta Segunda Vida</td>
+              <td>2</td>
+              <td>S/ 20.00</td>
+              <td><span class="estado preparando">Preparando</span></td>
             </tr>
-
             <tr>
-                <td>006</td>
-                <td>Sofía Ramos</td>
-                <td>Jugo + ensalada</td>
-                <td>1</td>
-                <td>10.00</td>
-                <td>En proceso</td>
+              <td>006</td>
+              <td><img src="img/Pizza Huella Cero.jpg" alt="Pizza Huella Cero" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Sofía Ramos</td>
+              <td>Pizza Huella Cero</td>
+              <td>1</td>
+              <td>S/ 10.00</td>
+              <td><span class="estado en-proceso">En proceso</span></td>
             </tr>
-
             <tr>
-                <td>007</td>
-                <td>Pedro Castillo</td>
-                <td>Pollo a la brasa</td>
-                <td>2</td>
-                <td>36.00</td>
-                <td>Enviado</td>
+              <td>007</td>
+              <td><img src="img/Hamburguesa Urbana.jpg" alt="Hamburguesa Raíz Urbana" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Pedro Castillo</td>
+              <td>Hamburguesa Raíz Urbana</td>
+              <td>2</td>
+              <td>S/ 24.00</td>
+              <td><span class="estado enviado">Enviado</span></td>
             </tr>
-
             <tr>
-                <td>008</td>
-                <td>Lucía Fernández</td>
-                <td>Arroz con pollo</td>
-                <td>1</td>
-                <td>9.00</td>
-                <td>Preparando</td>
+              <td>008</td>
+              <td><img src="img/Tacos Tierra Viva.jpg" alt="Tacos Tierra Viva" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Lucía Fernández</td>
+              <td>Tacos Tierra Viva</td>
+              <td>1</td>
+              <td>S/ 9.00</td>
+              <td><span class="estado preparando">Preparando</span></td>
             </tr>
-
             <tr>
-                <td>009</td>
-                <td>Diego Vargas</td>
-                <td>Ensalada</td>
-                <td>2</td>
-                <td>10.00</td>
-                <td>En proceso</td>
+              <td>009</td>
+              <td><img src="img/Bowl Dulce Rescate.png" alt="Bowl Dulce Rescate" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Diego Vargas</td>
+              <td>Bowl Dulce Rescate</td>
+              <td>2</td>
+              <td>S/ 28.00</td>
+              <td><span class="estado en-proceso">En proceso</span></td>
             </tr>
-
             <tr>
-                <td>010</td>
-                <td>Valeria Cruz</td>
-                <td>Combo completo</td>
-                <td>1</td>
-                <td>20.00</td>
-                <td>Enviado</td>
+              <td>010</td>
+              <td><img src="img/Risotto Del Mercado.png" alt="Risotto del Mercado" class="tabla-img"></td>
+              <td><i class="fa-solid fa-user"></i> Valeria Cruz</td>
+              <td>Risotto del Mercado</td>
+              <td>1</td>
+              <td>S/ 9.00</td>
+              <td><span class="estado enviado">Enviado</span></td>
             </tr>
+          </tbody>
         </table>
+      </div>
 
-        <br>
+      <div class="pedidos-nav">
+        <a href="menu.html" class="btn-ver-ofertas"><i class="fa-solid fa-utensils"></i> Volver al Menú</a>
+        <a href="index.html" class="btn-ver-ofertas"><i class="fa-solid fa-house"></i> Ir al Inicio</a>
+      </div>
 
-        <a href="menu.html">Volver al menú</a>
-        <a href="index.html">Ir al inicio</a>
+    </section>
 
     </main>
 

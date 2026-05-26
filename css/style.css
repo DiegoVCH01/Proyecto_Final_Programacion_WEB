@@ -780,3 +780,105 @@ footer {
   color: #5b6c3a;
   text-decoration: underline;
 }
+
+/* ==========================
+   PEDIDOS
+========================== */
+
+.seccion-pedidos {
+  margin-top: 30px;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 14px rgba(91, 108, 58, 0.1);
+}
+
+.tabla-pedidos {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  font-size: 0.95rem;
+}
+
+.tabla-pedidos thead tr {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+.tabla-pedidos thead th {
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+.tabla-pedidos tbody tr {
+  border-bottom: 1px solid #e8f0d8;
+  transition: background-color 0.2s ease;
+}
+
+.tabla-pedidos tbody tr:hover {
+  background-color: #f4f9ec;
+}
+
+.tabla-pedidos tbody tr:nth-child(even) {
+  background-color: #fafff5;
+}
+
+.tabla-pedidos tbody td {
+  padding: 12px 18px;
+  color: #444444;
+}
+
+.tabla-pedidos tbody td i {
+  color: #82a94e;
+  margin-right: 6px;
+}
+
+/* Estados de pedido */
+.estado {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.estado.enviado {
+  background-color: #e0f0c8;
+  color: #3d6b1e;
+}
+
+.estado.en-proceso {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.estado.preparando {
+  background-color: #d6eaf8;
+  color: #1a5276;
+}
+
+/* Botones de navegación de pedidos */
+.pedidos-nav {
+  display: flex;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+/* Hero seccion ofertas/pedidos */
+.hero-ofertas {
+  margin-bottom: 10px;
+}
+
+/* Imagen dentro de la tabla */
+.tabla-img {
+  width: 70px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
