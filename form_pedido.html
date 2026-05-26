@@ -31,105 +31,136 @@
 
     <main class="contenedor-principal fp-animacion-entrada">
         
-        <div class="fp-cabecera-form">
-            <h2>Realiza tu Pedido</h2>
-            <p>Rescata platillos deliciosos a precios accesibles y contribuye a reducir el desperdicio.</p>
+        <div class="fp-cabecera-checkout">
+            <h2>Realizar pedido</h2>
+            <p>Completa tus datos de entrega y el detalle de tu orden.</p>
         </div>
         
-        <form action="pedidos.html" class="fp-formulario-grid">
+        <form action="pedidos.html" class="fp-layout-checkout">
             
-            <div class="fp-grupo-inputs">
-                <div class="fp-campo">
-                    <label for="nombre">Nombre completo:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                </div>
+            <div class="fp-columna-formulario">
                 
-                <div class="fp-campo">
-                    <label for="telefono">Teléfono celular:</label>
-                    <input type="text" id="telefono" name="telefono" required>
-                </div>
+                <section class="fp-seccion-form">
+                    <div class="fp-titulo-seccion-flex">
+                        <h3>Datos personales</h3>
+                        <a href="login.html" class="fp-link-sesion">Iniciar sesión</a>
+                    </div>
+                    
+                    <div class="fp-grid-2col">
+                        <div class="fp-campo">
+                            <label>Nombres *</label>
+                            <input type="text" name="nombres" required>
+                        </div>
+                        <div class="fp-campo">
+                            <label>Apellidos *</label>
+                            <input type="text" name="apellidos" required>
+                        </div>
+                        <div class="fp-campo">
+                            <label>Correo electrónico *</label>
+                            <input type="email" name="correo" required>
+                        </div>
+                        <div class="fp-campo">
+                            <label>Teléfono *</label>
+                            <input type="text" name="telefono" required>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="fp-seccion-form">
+                    <h3>Datos de entrega *</h3>
+                    <div class="fp-campo">
+                        <label>Ingresa tu dirección exacta</label>
+                        <input type="text" name="direccion" required>
+                        <small>Indica calle, número y referencias para el repartidor.</small>
+                    </div>
+                </section>
+
+                <section class="fp-seccion-form">
+                    <h3>Detalle del pedido *</h3>
+                    <div class="fp-campo">
+                        <label>Escribe los platos que deseas rescatar hoy</label>
+                        <textarea name="platos_pedido" rows="3" required></textarea>
+                        <small>Puedes consultar la página de Menú para ver la disponibilidad.</small>
+                    </div>
+                </section>
+
+                <section class="fp-seccion-form">
+                    <h3>Comprobante de pago</h3>
+                    <div class="fp-opciones-radio">
+                        <label class="fp-radio-item">
+                            <input type="radio" name="comprobante" value="boleta_simple" checked>
+                            Boleta simple
+                        </label>
+                        <label class="fp-radio-item">
+                            <input type="radio" name="comprobante" value="boleta_electronica">
+                            Boleta electrónica
+                        </label>
+                        <label class="fp-radio-item">
+                            <input type="radio" name="comprobante" value="factura">
+                            Factura electrónica
+                        </label>
+                    </div>
+                </section>
+
+                <section class="fp-seccion-form">
+                    <h3>Métodos de pago *</h3>
+                    <div class="fp-grid-pagos">
+                        <label class="fp-tarjeta-pago">
+                            <input type="radio" name="metodo_pago" value="online" required>
+                            <div class="fp-contenido-pago">Pago en línea</div>
+                        </label>
+                        <label class="fp-tarjeta-pago">
+                            <input type="radio" name="metodo_pago" value="yape">
+                            <div class="fp-contenido-pago">YAPE / PLIN</div>
+                        </label>
+                        <label class="fp-tarjeta-pago">
+                            <input type="radio" name="metodo_pago" value="pos">
+                            <div class="fp-contenido-pago">POS (Contraentrega)</div>
+                        </label>
+                        <label class="fp-tarjeta-pago">
+                            <input type="radio" name="metodo_pago" value="efectivo">
+                            <div class="fp-contenido-pago">Efectivo</div>
+                        </label>
+                    </div>
+                </section>
+
             </div>
 
-            <div class="fp-grupo-inputs">
-                <div class="fp-campo">
-                    <label for="tipo_pedido">Modalidad de entrega:</label>
-                    <select id="tipo_pedido" name="tipo_pedido" required>
-                        <option value="" disabled selected>Selecciona una opción</option>
-                        <option value="delivery">Delivery</option>
-                        <option value="recojo">Recojo en local</option>
-                    </select>
-                </div>
+            <div class="fp-columna-resumen">
                 
-                <div class="fp-campo">
-                    <label for="direccion">Dirección exacta (Solo Delivery):</label>
-                    <input type="text" id="direccion" name="direccion">
-                </div>
-            </div>
-            
-            <div class="fp-campo fp-ancho-completo">
-                <label class="fp-titulo-seccion">Platos disponibles para rescatar hoy:</label>
-                
-                <div class="fp-grid-platos">
-                    <label class="fp-tarjeta-plato">
-                        <input type="checkbox" name="platos" value="hamburguesa">
-                        <div class="fp-contenido-tarjeta">
-                            <div class="fp-texto-plato">
-                                <h4>Hamburguesa Urbana</h4>
-                                <span>S/ 10.00</span>
-                            </div>
-                        </div>
-                    </label>
+                <div class="fp-tarjeta-resumen">
+                    <div class="fp-resumen-header">
+                        <h4>Resumen de pedido</h4>
+                        <span class="fp-badge" style="background:#EEE; color:#888;">Vacío</span>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 25px 10px; color: #888;">
+                        <p style="margin-bottom: 8px; font-weight: bold; color: #555;">Tu carrito está esperando.</p>
+                        <p style="font-size: 0.85rem;">Los detalles de tus platos y el costo de envío se calcularán al confirmar la orden.</p>
+                    </div>
 
-                    <label class="fp-tarjeta-plato">
-                        <input type="checkbox" name="platos" value="ensalada">
-                        <div class="fp-contenido-tarjeta">
-                            <div class="fp-texto-plato">
-                                <h4>Ensalada Bosque Urbano</h4>
-                                <span>S/ 8.00</span>
-                            </div>
-                        </div>
-                    </label>
-
-                    <label class="fp-tarjeta-plato">
-                        <input type="checkbox" name="platos" value="pizza">
-                        <div class="fp-contenido-tarjeta">
-                            <div class="fp-texto-plato">
-                                <h4>Pizza Huella Cero</h4>
-                                <span>S/ 12.00</span>
-                            </div>
-                        </div>
-                    </label>
-
-                    <label class="fp-tarjeta-plato">
-                        <input type="checkbox" name="platos" value="wrap">
-                        <div class="fp-contenido-tarjeta">
-                            <div class="fp-texto-plato">
-                                <h4>Wrap de Pollo</h4>
-                                <span>S/ 9.00</span>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-            </div>
-            
-            <div class="fp-grupo-inputs">
-                <div class="fp-campo">
-                    <label for="metodo_pago">Método de pago:</label>
-                    <select id="metodo_pago" name="metodo_pago" required>
-                        <option value="yape">Yape / Plin</option>
-                        <option value="tarjeta">Tarjeta (Llevaremos POS)</option>
-                        <option value="efectivo">Efectivo</option>
-                    </select>
+                    <div class="fp-total-carrito" style="border-top: 1px dashed #EEE; padding-top: 15px; margin-top: 10px;">
+                        <span style="color: #888;">Total estimado:</span>
+                        <strong style="color: #888;">S/ 0.00</strong>
+                    </div>
                 </div>
 
-                <div class="fp-campo">
-                    <label for="comentarios">Indicaciones adicionales:</label>
-                    <input type="text" id="comentarios" name="comentarios">
+                <div class="fp-tarjeta-resumen">
+                    <label>¿Tienes un cupón? Agrégalo aquí.</label>
+                    <div class="fp-cupon-flex">
+                        <input type="text" placeholder="Código">
+                        <button type="button" class="fp-btn-secundario">Validar</button>
+                    </div>
                 </div>
-            </div>
-            
-            <div class="fp-campo fp-ancho-completo fp-contenedor-boton">
-                <button type="submit" class="fp-btn-enviar">Confirmar Pedido</button>
+
+                <div class="fp-acciones-finales">
+                    <label class="fp-check-legal">
+                        <input type="checkbox" required>
+                        Acepto los Términos y Condiciones y Políticas de Privacidad.
+                    </label>
+                    <button type="submit" class="fp-btn-principal">CONFIRMAR E IR A MIS PEDIDOS</button>
+                </div>
+
             </div>
         </form>
     </main>
