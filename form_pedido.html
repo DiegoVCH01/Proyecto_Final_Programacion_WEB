@@ -29,62 +29,107 @@
         </nav>
     </header>
 
-    <main class="contenedor-principal">
-        <h2>Realiza tu Pedido</h2>
-        <p>Rescata comida deliciosa a un súper precio y ayuda al planeta.</p>
+    <main class="contenedor-principal fp-animacion-entrada">
         
-        <form action="pedidos.html" class="formulario-grid">
+        <div class="fp-cabecera-form">
+            <h2>Realiza tu Pedido</h2>
+            <p>Rescata platillos deliciosos a precios accesibles y contribuye a reducir el desperdicio.</p>
+        </div>
+        
+        <form action="pedidos.html" class="fp-formulario-grid">
             
-            <div class="campo">
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            
-            <div class="campo">
-                <label for="telefono">Teléfono celular:</label>
-                <input type="text" id="telefono" name="telefono" required>
+            <div class="fp-grupo-inputs">
+                <div class="fp-campo">
+                    <label for="nombre">Nombre completo:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                </div>
+                
+                <div class="fp-campo">
+                    <label for="telefono">Teléfono celular:</label>
+                    <input type="text" id="telefono" name="telefono" required>
+                </div>
             </div>
 
-            <div class="campo">
-                <label for="tipo_pedido">Modalidad de entrega:</label>
-                <select id="tipo_pedido" name="tipo_pedido" style="padding: 10px; border: 1px solid #cccccc; border-radius: 6px; font-family: inherit; outline: none; background: white;" required>
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <option value="delivery">Delivery</option>
-                    <option value="recojo">Recojo en local</option>
-                </select>
-            </div>
-            
-            <div class="campo">
-                <label for="direccion">Dirección exacta (Si elegiste Delivery):</label>
-                <input type="text" id="direccion" name="direccion">
-            </div>
-            
-            <div class="campo opciones-platos">
-                <label>Platos disponibles para rescatar hoy:</label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="platos" value="hamburguesa"> Hamburguesa Urbana (S/ 10.00)</label>
-                    <label><input type="checkbox" name="platos" value="ensalada"> Ensalada Bosque Urbano (S/ 8.00)</label>
-                    <label><input type="checkbox" name="platos" value="pizza"> Pizza Huella Cero (S/ 12.00)</label>
-                    <label><input type="checkbox" name="platos" value="wrap"> Wrap de Pollo (S/ 9.00)</label>
+            <div class="fp-grupo-inputs">
+                <div class="fp-campo">
+                    <label for="tipo_pedido">Modalidad de entrega:</label>
+                    <select id="tipo_pedido" name="tipo_pedido" required>
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="recojo">Recojo en local</option>
+                    </select>
+                </div>
+                
+                <div class="fp-campo">
+                    <label for="direccion">Dirección exacta (Solo Delivery):</label>
+                    <input type="text" id="direccion" name="direccion">
                 </div>
             </div>
             
-            <div class="campo">
-                <label for="metodo_pago">Método de pago:</label>
-                <select id="metodo_pago" name="metodo_pago" style="padding: 10px; border: 1px solid #cccccc; border-radius: 6px; font-family: inherit; outline: none; background: white;" required>
-                    <option value="yape">Yape / Plin</option>
-                    <option value="tarjeta">Tarjeta</option>
-                    <option value="efectivo">Efectivo</option>
-                </select>
-            </div>
+            <div class="fp-campo fp-ancho-completo">
+                <label class="fp-titulo-seccion">Platos disponibles para rescatar hoy:</label>
+                
+                <div class="fp-grid-platos">
+                    <label class="fp-tarjeta-plato">
+                        <input type="checkbox" name="platos" value="hamburguesa">
+                        <div class="fp-contenido-tarjeta">
+                            <div class="fp-texto-plato">
+                                <h4>Hamburguesa Urbana</h4>
+                                <span>S/ 10.00</span>
+                            </div>
+                        </div>
+                    </label>
 
-            <div class="campo">
-                <label for="comentarios">Indicaciones para el chef / repartidor:</label>
-                <input type="text" id="comentarios" name="comentarios">
+                    <label class="fp-tarjeta-plato">
+                        <input type="checkbox" name="platos" value="ensalada">
+                        <div class="fp-contenido-tarjeta">
+                            <div class="fp-texto-plato">
+                                <h4>Ensalada Bosque Urbano</h4>
+                                <span>S/ 8.00</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="fp-tarjeta-plato">
+                        <input type="checkbox" name="platos" value="pizza">
+                        <div class="fp-contenido-tarjeta">
+                            <div class="fp-texto-plato">
+                                <h4>Pizza Huella Cero</h4>
+                                <span>S/ 12.00</span>
+                            </div>
+                        </div>
+                    </label>
+
+                    <label class="fp-tarjeta-plato">
+                        <input type="checkbox" name="platos" value="wrap">
+                        <div class="fp-contenido-tarjeta">
+                            <div class="fp-texto-plato">
+                                <h4>Wrap de Pollo</h4>
+                                <span>S/ 9.00</span>
+                            </div>
+                        </div>
+                    </label>
+                </div>
             </div>
             
-            <div class="campo-boton">
-                <input type="submit" value="Confirmar Pedido" class="btn-enviar">
+            <div class="fp-grupo-inputs">
+                <div class="fp-campo">
+                    <label for="metodo_pago">Método de pago:</label>
+                    <select id="metodo_pago" name="metodo_pago" required>
+                        <option value="yape">Yape / Plin</option>
+                        <option value="tarjeta">Tarjeta (Llevaremos POS)</option>
+                        <option value="efectivo">Efectivo</option>
+                    </select>
+                </div>
+
+                <div class="fp-campo">
+                    <label for="comentarios">Indicaciones adicionales:</label>
+                    <input type="text" id="comentarios" name="comentarios">
+                </div>
+            </div>
+            
+            <div class="fp-campo fp-ancho-completo fp-contenedor-boton">
+                <button type="submit" class="fp-btn-enviar">Confirmar Pedido</button>
             </div>
         </form>
     </main>
