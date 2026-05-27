@@ -1,113 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mrs. Green Spoon - Registrarse</title>
-    <link rel="preload" href="img/spoon2.png" as="image">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="preload" href="img/spoon2.png" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="header-principal">
-        <div class="logo-area">
-            <img src="img/logo.png" alt="Logo Mrs. GS">
-            <div class="logo-texto">
-                <h1>Mrs. Green Spoon</h1>
-                <p>Menos desperdicio, más sabor</p>
-            </div>
-        </div>
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="form_pedido.html">Pedido</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Formulario</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="seccion-auth">
-            <div class="auth-container">
-                
-                <div class="auth-info-box">
-                    <img src="img/spoon.png" alt="Green Spoon Logo" class="auth-brand-logo interactiva">
-                    <h2>Únete al cambio verde</h2>
-                    <p>Regístrate para empezar a reducir el desperdicio de alimentos de los mejores locales locales y aprovecha precios hasta un 50% menores.</p>
-                    <div class="auth-features">
-                        <span><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> Salva el Planeta</span>
-                        <span><i class="fa-solid fa-utensils" aria-hidden="true"></i> Platos Increíbles</span>
-                    </div>
-                </div>
-
-                <div class="auth-form-box">
-                    <h3>Crear Cuenta</h3>
-                    
-                    <form action="login.html" method="get" class="form-auth">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo:</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="correo">Correo Electrónico:</label>
-                            <input type="email" id="correo" name="correo" placeholder="Ej: juan@correo.com" autocomplete="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirm-password">Confirmar Contraseña:</label>
-                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Repite tu contraseña" autocomplete="new-password" required>
-                        </div>
-                        
-                        <button type="submit" class="btn-auth">
-                            <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Registrarse
-                        </button>
-                    </form>
-
-                    <p class="registro-link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
-                </div>
-
+      <section class="seccion-auth">
+        <div class="auth-container">
+          <div class="auth-info-box">
+            <img
+              src="img/spoon.png"
+              alt="Green Spoon Logo"
+              class="auth-brand-logo interactiva"
+            />
+            <h2>Únete al cambio verde</h2>
+            <p>
+              Regístrate para empezar a reducir el desperdicio de alimentos de
+              los mejores locales locales y aprovecha precios hasta un 50%
+              menores.
+            </p>
+            <div class="auth-features">
+              <span
+                ><i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                Salva el Planeta</span
+              >
+              <span
+                ><i class="fa-solid fa-utensils" aria-hidden="true"></i> Platos
+                Increíbles</span
+              >
             </div>
-        </section>
+          </div>
+
+          <div class="auth-form-box">
+            <h3>Crear Cuenta</h3>
+
+            <form action="login.html" method="get" class="form-auth">
+              <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Ej: Juan Pérez"
+                  autocomplete="name"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  placeholder="Ej: juan@correo.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Mínimo 8 caracteres"
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  placeholder="Repite tu contraseña"
+                  autocomplete="new-password"
+                  required
+                />
+              </div>
+
+              <button type="submit" class="btn-auth">
+                <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                Registrarse
+              </button>
+            </form>
+
+            <p class="registro-link">
+              ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacto: contacto@mrsgreenspoon.com</p>
-        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> Teléfono: 987654321</p>
-        <p><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Redes sociales:</p>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo" />
+        </div>
 
-        <ul>
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
             <a href="https://facebook.com" target="_blank" class="social-item">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
+              <i class="fab fa-facebook-f"></i>
             </a>
             <a href="https://instagram.com" target="_blank" class="social-item">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
+              <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://wa.me/987654321" target="_blank" class="social-item">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <a
+              href="https://wa.me/987654321"
+              target="_blank"
+              class="social-item"
+            >
+              <i class="fab fa-whatsapp"></i>
             </a>
-        </ul>
+          </div>
+        </div>
+      </div>
 
-        <p class="footer-copy">
-            2026 Mrs. Green Spoon — Todos los derechos reservados
-        </p>
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
