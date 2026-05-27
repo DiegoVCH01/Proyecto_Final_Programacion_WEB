@@ -9,7 +9,7 @@
 }
 
 /* ==========================
-   BODY GENERAL
+   BASE GENERAL
 ========================== */
 
 body {
@@ -27,114 +27,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
-/* ==========================
-   HEADER TIPO COPRA
-========================== */
-
-.header-principal {
-  background-color: #82a94e;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 8px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-area img {
-  width: 40px;
-  animation: aparecerLogo 0.8s ease;
-}
-
-.logo-texto h1 {
-  color: #ffffff;
-  font-family: "IM Fell Double Pica SC", serif;
-  font-size: 1.8rem;
-  margin: 0;
-}
-
-.logo-texto p {
-  color: #ebf4d6;
-  font-size: 0.9rem;
-  margin: 0;
-  font-style: italic;
-}
-
-/* ==========================
-   NAVBAR
-========================== */
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #a8c167;
-  transform: scale(1.05);
-}
-
-/* ==========================
-   ANIMACIONES
-========================== */
-
-@keyframes aparecerLogo {
-  from {
-    opacity: 0;
-    transform: scale(0.7);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes aparecerContenido {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes moverCarrusel {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-950px);
-  }
-}
-
-/* ==========================
-   MAIN
-========================== */
 
 main {
   max-width: 1200px;
@@ -169,257 +61,158 @@ main p {
   color: #555555;
 }
 
-.seccion-bienvenida h2 {
-  font-family: "IM Fell Double Pica SC", serif;
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #82a94e;
-  margin-bottom: 18px;
-  line-height: 1.2;
-}
+@keyframes aparecerContenido {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
 
-.seccion-bienvenida p {
-  font-family: "Edu SA Beginner", cursive;
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 1.6;
-  color: #555555;
-}
-
-.seccion-proposito h3 {
-  font-family: "IM Fell Double Pica SC", serif;
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #5b6c3a;
-  margin-bottom: 14px;
-}
-
-.seccion-proposito p {
-  font-family: "Edu SA Beginner", cursive;
-  font-size: 1.35rem;
-  font-weight: 600;
-  line-height: 1.6;
-  color: #555555;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ==========================
-   SECCIONES
+   HEADER / NAVBAR
 ========================== */
 
-.seccion-bienvenida {
+.header-principal {
+  background-color: #82a94e;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: 40px;
-  padding-bottom: 35px;
-  border-bottom: 3px solid #e0e8d0;
-}
-
-.bienvenida-texto {
-  flex: 1;
-}
-
-.bienvenida-video video {
-  width: 100%;
-  max-width: 500px;
-  border-radius: 18px;
-  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
-  object-fit: cover;
-}
-
-.seccion-proposito {
-  padding: 28px 0;
-  border-bottom: 3px solid #e0e8d0;
-}
-
-.seccion-accesos {
-  padding-top: 20px;
-}
-
-/* ==========================
-   CARDS DE ACCESOS
-========================== */
-
-.accesos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.acceso-card {
-  background-color: #ffffff;
-  border: 1px solid #d6e8b4;
-  border-radius: 12px;
-  padding: 24px 20px;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
-
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.acceso-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
-  border-color: #82a94e;
-}
-
-.acceso-icono {
-  width: 48px;
-  height: 48px;
-  background-color: #ebf4d6;
-  border-radius: 50%;
-
-  display: flex;
   align-items: center;
-  justify-content: center;
-
-  font-size: 1.3rem;
-  color: #5b6c3a;
-
-  transition: 0.3s ease;
-}
-
-.acceso-card:hover .acceso-icono {
-  background-color: #82a94e;
-  color: #ffffff;
-  transform: rotate(8deg) scale(1.1);
-}
-
-.acceso-card h4 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #5b6c3a;
-}
-
-.acceso-card p {
-  font-size: 0.9rem;
-  color: #666666;
-  line-height: 1.5;
-  margin-bottom: 0;
-}
-
-.acceso-link {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  color: #82a94e;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-top: auto;
-  transition: 0.3s ease;
-}
-
-.acceso-card:hover .acceso-link {
-  color: #5b6c3a;
-  gap: 10px;
-}
-
-/* ==========================
-   OFERTAS DESTACADAS - INDEX
-========================== */
-
-.seccion-destacadas {
-  padding-top: 28px;
-}
-
-.carrusel-contenedor {
-  width: 100%;
+  padding: 8px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
   overflow: hidden;
-  margin-top: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
-.carrusel-ofertas {
+.logo-area {
   display: flex;
-  gap: 20px;
-  width: max-content;
-  animation: moverCarrusel 42s linear infinite;
-}
-
-.carrusel-contenedor:hover .carrusel-ofertas {
-  animation-play-state: paused;
-}
-
-.destacada-card {
-  width: 320px;
-  flex-shrink: 0;
-}
-
-.destacada-card {
-  min-width: 320px;
-  flex-shrink: 0;
-
-  background-color: #ffffff;
-  border: 1px solid #d6e8b4;
-  border-radius: 14px;
-  overflow: hidden;
-
-  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.destacada-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
-}
-
-.destacada-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.destacada-card h4 {
-  color: #5b6c3a;
-  padding: 14px 16px 4px;
-  font-size: 1rem;
-}
-
-.destacada-card p {
-  padding: 0 16px;
-  font-size: 0.9rem;
-  color: #666666;
-}
-
-.destacada-card span {
-  display: block;
-  padding: 0 16px 16px;
-  color: #82a94e;
-  font-size: 1.1rem;
-  font-weight: bold;
-}
-
-.btn-ver-ofertas {
-  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+}
 
-  margin-top: 18px;
-  padding: 10px 18px;
+.logo-area img {
+  width: 40px;
+  animation: aparecerLogo 0.8s ease;
+}
 
-  background-color: #82a94e;
+.logo-texto h1 {
   color: #ffffff;
-  text-decoration: none;
-  font-weight: bold;
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
 
+.logo-texto p {
+  color: #ebf4d6;
+  font-size: 0.9rem;
+  margin: 0;
+  font-style: italic;
+}
+
+.header-animacion {
+  position: absolute;
+  left: 45%;
+  top: -22px;
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-animacion img {
+  width: 170px;
+}
+
+nav {
+  position: relative;
+  z-index: 2;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px 12px;
   border-radius: 8px;
   transition: 0.3s ease;
 }
 
-.btn-ver-ofertas:hover {
-  background-color: #5b6c3a;
-  transform: translateY(-2px);
+nav ul li a:hover {
+  background-color: #a8c167;
+  transform: scale(1.05);
+}
+
+@keyframes aparecerLogo {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 960px) {
+
+  .header-principal {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 14px 20px;
+  }
+
+  .logo-area {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header-animacion {
+    position: static;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0.9;
+    order: 2;
+  }
+
+  .header-animacion img {
+    width: 120px;
+    opacity: 0.9;
+  }
+
+  nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .logo-area {
+    order: 1;
+  }
+
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
 }
 
 /* ==========================
@@ -539,18 +332,268 @@ footer {
 }
 
 /* ==========================
-   RESPONSIVE
+   INDEX.HTML
 ========================== */
 
-@media (max-width: 768px) {
-  .header-principal {
-    flex-direction: column;
-    gap: 15px;
-    padding: 16px;
+.seccion-bienvenida h2 {
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #82a94e;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.seccion-bienvenida p {
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.seccion-proposito h3 {
+  font-family: "IM Fell Double Pica SC", serif;
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #5b6c3a;
+  margin-bottom: 14px;
+}
+
+.seccion-proposito p {
+  font-family: "Edu SA Beginner", cursive;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.seccion-bienvenida {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding-bottom: 35px;
+  border-bottom: 3px solid #e0e8d0;
+}
+
+.bienvenida-texto {
+  flex: 1;
+}
+
+.bienvenida-video video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+  object-fit: cover;
+}
+
+.seccion-proposito {
+  padding: 28px 0;
+  border-bottom: 3px solid #e0e8d0;
+}
+
+.seccion-accesos {
+  padding-top: 20px;
+}
+
+.accesos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.acceso-card {
+  background-color: #ffffff;
+  border: 1px solid #d6e8b4;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.acceso-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+  border-color: #82a94e;
+}
+
+.acceso-icono {
+  width: 48px;
+  height: 48px;
+  background-color: #ebf4d6;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.3rem;
+  color: #5b6c3a;
+
+  transition: 0.3s ease;
+}
+
+.acceso-card:hover .acceso-icono {
+  background-color: #82a94e;
+  color: #ffffff;
+  transform: rotate(8deg) scale(1.1);
+}
+
+.acceso-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #5b6c3a;
+}
+
+.acceso-card p {
+  font-size: 0.9rem;
+  color: #666666;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.acceso-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #82a94e;
+  font-weight: bold;
+  font-size: 0.9rem;
+  margin-top: auto;
+  transition: 0.3s ease;
+}
+
+.acceso-card:hover .acceso-link {
+  color: #5b6c3a;
+  gap: 10px;
+}
+
+.seccion-destacadas {
+  padding-top: 28px;
+}
+
+.carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+
+.carrusel-ofertas {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: moverCarrusel 42s linear infinite;
+}
+
+.carrusel-contenedor:hover .carrusel-ofertas {
+  animation-play-state: paused;
+}
+
+.destacada-card {
+  width: 320px;
+  flex-shrink: 0;
+}
+
+.destacada-card {
+  min-width: 320px;
+  flex-shrink: 0;
+
+  background-color: #ffffff;
+  border: 1px solid #d6e8b4;
+  border-radius: 14px;
+  overflow: hidden;
+
+  box-shadow: 0 2px 16px rgba(91, 108, 58, 0.1);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.destacada-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(91, 108, 58, 0.18);
+}
+
+.destacada-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.destacada-card h4 {
+  color: #5b6c3a;
+  padding: 14px 16px 4px;
+  font-size: 1rem;
+}
+
+.destacada-card p {
+  padding: 0 16px;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+.destacada-card span {
+  display: block;
+  padding: 0 16px 16px;
+  color: #82a94e;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.btn-ver-ofertas {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  margin-top: 18px;
+  padding: 10px 18px;
+
+  background-color: #82a94e;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-ver-ofertas:hover {
+  background-color: #5b6c3a;
+  transform: translateY(-2px);
+}
+
+@keyframes moverCarrusel {
+  from {
+    transform: translateX(0);
   }
 
-  nav ul {
-    justify-content: center;
+  to {
+    transform: translateX(-950px);
+  }
+}
+
+@media (max-width: 768px) {
+  .seccion-bienvenida {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bienvenida-video video {
+    max-width: 100%;
   }
 
   .accesos-grid {
@@ -570,14 +613,9 @@ footer {
   .accesos-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  .destacadas-grid {
-    flex-direction: column;
-  }
 }
-
 /* ==========================
-   OFERTAS
+   OFERTAS.HTML
 ========================== */
 
 .seccion-ofertas {
@@ -656,10 +694,6 @@ footer {
   font-weight: bold;
 }
 
-/* ==========================
-   BOTÓN CARRITO
-========================== */
-
 .btn-carrito {
   margin-top: 12px;
   padding: 10px 18px;
@@ -700,10 +734,6 @@ footer {
   transform: rotate(-12deg) scale(1.15);
 }
 
-/* ==========================
-   Animación aparecer ofertas
-========================== */
-
 @keyframes aparecerOferta {
   from {
     opacity: 0;
@@ -715,10 +745,6 @@ footer {
     transform: translateY(0);
   }
 }
-
-/* ==========================
-   RESPONSIVE OFERTAS
-========================== */
 
 @media (max-width: 768px) {
   main {
@@ -773,7 +799,6 @@ footer {
     justify-content: center;
   }
 }
-
 /* ==========================
    LOGIN.HTML/REGISTRAR.HTML
 ========================== */
@@ -1339,297 +1364,332 @@ footer {
   display: block;
 }
 
+@media (max-width: 768px) {
+
+  .tabla-pedidos {
+    font-size: 0.82rem;
+  }
+
+  .tabla-pedidos thead th,
+  .tabla-pedidos tbody td {
+    padding: 10px 12px;
+  }
+
+  .tabla-img {
+    width: 55px;
+    height: 50px;
+  }
+
+  .pedidos-nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+}
+
 /* =======================================================
    FORMULARIO DE PEDIDOS CHECKOUT 
 ======================================================= */
 
 .fp-animacion-entrada {
-    animation: fpFadeInUp 0.6s ease-out forwards;
+  animation: fpFadeInUp 0.6s ease-out forwards;
 }
 
 @keyframes fpFadeInUp {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .fp-cabecera-checkout {
-    margin-bottom: 25px;
-    border-bottom: 1px solid #EBF4D6;
-    padding-bottom: 15px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ebf4d6;
+  padding-bottom: 15px;
 }
 
 .fp-cabecera-checkout h2 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 5px;
+  color: #333;
+  font-size: 1.8rem;
+  margin-bottom: 5px;
 }
 
 .fp-layout-checkout {
-    display: grid;
-    grid-template-columns: 1fr 380px;
-    gap: 30px;
-    align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+  align-items: start;
 }
 
 .fp-seccion-form {
-    background-color: #FFFFFF;
-    border: 1px solid #EAEAEA;
-    border-radius: 8px;
-    padding: 25px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .fp-titulo-seccion-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .fp-seccion-form h3 {
-    font-size: 1.1rem;
-    color: #333;
-    margin-bottom: 15px;
-    border-bottom: none;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: none;
 }
 
 .fp-opcional {
-    color: #999;
-    font-size: 0.85rem;
-    font-weight: normal;
+  color: #999;
+  font-size: 0.85rem;
+  font-weight: normal;
 }
 
-.fp-link-sesion, .fp-link-accion {
-    color: #82A94E;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: bold;
+.fp-link-sesion,
+.fp-link-accion {
+  color: #82a94e;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: bold;
 }
 
 .fp-grid-2col {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
 .fp-campo {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .fp-campo label {
-    font-size: 0.9rem;
-    color: #555;
-    font-weight: bold;
+  font-size: 0.9rem;
+  color: #555;
+  font-weight: bold;
 }
 
 .fp-campo input[type="text"],
 .fp-campo input[type="email"],
 .fp-campo textarea {
-    padding: 10px 12px;
-    border: 1px solid #CCC;
-    border-radius: 6px;
-    font-family: inherit;
-    transition: border-color 0.3s;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  transition: border-color 0.3s;
 }
 
-.fp-campo input:focus, .fp-campo textarea:focus {
-    border-color: #82A94E;
-    outline: none;
+.fp-campo input:focus,
+.fp-campo textarea:focus {
+  border-color: #82a94e;
+  outline: none;
 }
 
 .fp-campo small {
-    color: #888;
-    font-size: 0.8rem;
+  color: #888;
+  font-size: 0.8rem;
 }
 
 .fp-mt-20 {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
-.fp-opciones-radio, .fp-opciones-check {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.fp-opciones-radio,
+.fp-opciones-check {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.fp-radio-item, .fp-check-item {
-    font-size: 0.95rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
+.fp-radio-item,
+.fp-check-item {
+  font-size: 0.95rem;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
 }
 
 .fp-grid-pagos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
 }
 
 .fp-tarjeta-pago input[type="radio"] {
-    display: none;
+  display: none;
 }
 
 .fp-contenido-pago {
-    border: 1px solid #CCC;
-    border-radius: 8px;
-    padding: 15px;
-    text-align: center;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: #555;
-    cursor: pointer;
-    transition: all 0.2s;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .fp-tarjeta-pago input[type="radio"]:checked + .fp-contenido-pago {
-    border: 2px solid #82A94E;
-    color: #5B6C3A;
-    background-color: #FAFCF5;
+  border: 2px solid #82a94e;
+  color: #5b6c3a;
+  background-color: #fafcf5;
 }
 
 .fp-tarjeta-resumen {
-    background-color: #FFFFFF;
-    border: 1px solid #EAEAEA;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
 }
 
 .fp-tarjeta-resumen h4 {
-    color: #333;
-    font-size: 1rem;
-    margin-bottom: 10px;
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .fp-tarjeta-resumen p {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
 }
 
 .fp-resumen-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid #EEE;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .fp-badge {
-    background-color: #EBF4D6;
-    color: #5B6C3A;
-    padding: 4px 8px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: bold;
+  background-color: #ebf4d6;
+  color: #5b6c3a;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 .fp-item-carrito {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    border-bottom: 1px dashed #EEE;
-    padding-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #eee;
+  padding-bottom: 15px;
 }
 
 .fp-item-info strong {
-    font-size: 0.95rem;
-    color: #333;
+  font-size: 0.95rem;
+  color: #333;
 }
 
 .fp-item-info p {
-    margin: 5px 0;
-    font-size: 0.8rem;
+  margin: 5px 0;
+  font-size: 0.8rem;
 }
 
 .fp-cantidad {
-    background: #F5F5F5;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
 }
 
 .fp-item-precio {
-    font-weight: bold;
-    color: #333;
+  font-weight: bold;
+  color: #333;
 }
 
 .fp-total-carrito {
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.1rem;
-    color: #333;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  color: #333;
 }
 
 .fp-cupon-flex {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 .fp-cupon-flex input {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #CCC;
-    border-radius: 6px;
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
 }
 
 .fp-btn-secundario {
-    background-color: #EAEAEA;
-    border: none;
-    padding: 0 15px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-    color: #555;
-    transition: background 0.3s;
+  background-color: #eaeaea;
+  border: none;
+  padding: 0 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+  transition: background 0.3s;
 }
 
-.fp-btn-secundario:hover { background-color: #CCC; }
+.fp-btn-secundario:hover {
+  background-color: #ccc;
+}
 
 .fp-acciones-finales {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .fp-check-legal {
-    font-size: 0.8rem;
-    color: #666;
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
+  font-size: 0.8rem;
+  color: #666;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
 }
 
 .fp-btn-principal {
-    background-color: #82A94E;
-    color: #FFF;
-    border: none;
-    padding: 15px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-    width: 100%;
+  background-color: #82a94e;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
 }
 
 .fp-btn-principal:hover {
-    background-color: #5B6C3A;
+  background-color: #5b6c3a;
 }
 
 @media (max-width: 900px) {
-    .fp-layout-checkout {
-        grid-template-columns: 1fr;
-    }
-    .fp-grid-2col {
-        grid-template-columns: 1fr;
-    }
+  .fp-layout-checkout {
+    grid-template-columns: 1fr;
+  }
+  .fp-grid-2col {
+    grid-template-columns: 1fr;
+  }
 }
