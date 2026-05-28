@@ -28,6 +28,11 @@ body {
   flex-direction: column;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 main {
   max-width: 1200px;
   margin: 30px auto;
@@ -167,11 +172,12 @@ nav ul li a:hover {
 }
 
 @media (max-width: 960px) {
-
   .header-principal {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    max-width: 100%;
     gap: 12px;
     padding: 14px 20px;
   }
@@ -210,9 +216,10 @@ nav ul li a:hover {
   nav ul {
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 100%;
+    flex-wrap: wrap;
     gap: 14px;
   }
-
 }
 
 /* ==========================
@@ -586,32 +593,51 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
-  .seccion-bienvenida {
+@media (max-width: 960px) {
+  .main-index {
+    width: calc(100% - 24px);
+    margin: 18px auto;
+    padding: 24px 18px;
+  }
+
+  .main-index .seccion-bienvenida {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
   }
 
-  .bienvenida-video video {
+  .main-index .bienvenida-texto,
+  .main-index .bienvenida-video {
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
   }
 
-  .accesos-grid {
+  .main-index .bienvenida-video video {
+    width: 100%;
+    max-width: 520px;
+    height: 260px;
+    object-fit: cover;
+  }
+
+  .main-index .accesos-grid {
     grid-template-columns: 1fr;
-  }
-
-  main h2 {
-    font-size: 1.8rem;
-  }
-
-  main h3 {
-    font-size: 1.2rem;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .accesos-grid {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 600px) {
+  .seccion-bienvenida h2 {
+    font-size: 1.8rem;
+  }
+
+  .seccion-bienvenida p,
+  .seccion-proposito p {
+    font-size: 1rem;
+  }
+
+  .bienvenida-video video {
+    height: 210px;
   }
 }
 /* ==========================
@@ -1365,7 +1391,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-
   .tabla-pedidos {
     font-size: 0.82rem;
   }
@@ -1384,7 +1409,6 @@ footer {
     flex-direction: column;
     align-items: stretch;
   }
-
 }
 
 /* =======================================================
