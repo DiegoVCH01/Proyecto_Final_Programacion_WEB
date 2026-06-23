@@ -202,6 +202,77 @@
         </ul>
         <p class="footer-copy">2026 EcoPlato - Todos los derechos reservados</p>
     </footer>
+<script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.querySelector(".fp-layout-checkout");
+            const inputPlatos = document.querySelector("textarea[name='platos_pedido']");
+            const totalText = document.querySelector(".fp-total-carrito strong");
+            const btnCupon = document.querySelector(".fp-btn-secundario");
+            const inputCupon = document.querySelector(".fp-cupon-flex input");
+            const badgeResumen = document.querySelector(".fp-badge");
 
+            let precioBase = 0;
+            let descuento = 0;
+
+            inputPlatos.addEventListener("input", (e) => {
+                const texto = e.target.value.trim();
+                if (texto.length > 0) {
+                    const cantidadPlatos = texto.split(",").filter(p => p.trim() !== "").length;
+                    precioBase = cantidadPlatos * 15.00;
+                    badgeResumen.textContent = `${cantidadPlatos} plato(s)`;
+                    badgeResumen.style.background = "#4CAF50";
+                    badgeResumen.style.color = "white";
+                } else {
+                    precioBase = 0;
+                    badgeResumen.textContent = "Vacío";
+                    badgeResumen.style.background = "#EEE";
+                    badgeResumen.style.color = "#888";
+                }
+                actualizarTotal();
+            });
+
+            btnCupon.addEventListener("click", () => {
+                const codigo = inputCupon.value.trim().toUpperCase();
+                if (codigo === "ECO20") {
+                    descuento = 0.20;
+                    alert("¡Cupón ECO20 aplicado! Tienes 20% de descuento en tu orden.");
+                } else if (codigo !== "") {
+                    descuento = 0;
+                    alert("El cupón ingresado no es válido.");
+                }
+                actualizarTotal();
+            });
+
+            function actualizarTotal() {
+                const totalFinal = precioBase - (precioBase * descuento);
+                totalText.textContent = `S/ ${totalFinal.toFixed(2)}`;
+            }
+
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+
+                const formData = new FormData(form);
+                const nuevoPedido = {
+                    id: Date.now(),
+                    nombres: formData.get("nombres"),
+                    apellidos: formData.get("apellidos"),
+                    direccion: formData.get("direccion"),
+                    platos: formData.get("platos_pedido"),
+                    metodoPago: formData.get("metodo_pago"),
+                    total: totalText.textContent,
+                    fecha: new Date().toLocaleDateString()
+                };
+
+                let historialPedidos = JSON.parse(localStorage.getItem("ecoPlatoPedidos")) || [];
+                historialPedidos.push(nuevoPedido);
+                localStorage.setItem("ecoPlatoPedidos", JSON.stringify(historialPedidos));
+
+                alert("¡Pedido confirmado con éxito! Redirigiendo a tu historial...");
+                window.location.href = form.action; 
+            });
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>
