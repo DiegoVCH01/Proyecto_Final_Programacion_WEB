@@ -502,19 +502,10 @@ footer {
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: moverCarrusel 42s linear infinite;
-}
-
-.carrusel-contenedor:hover .carrusel-ofertas {
-  animation-play-state: paused;
 }
 
 .destacada-card {
   width: 320px;
-  flex-shrink: 0;
-}
-
-.destacada-card {
   min-width: 320px;
   flex-shrink: 0;
 
@@ -583,15 +574,6 @@ footer {
   transform: translateY(-2px);
 }
 
-@keyframes moverCarrusel {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-950px);
-  }
-}
 
 @media (max-width: 960px) {
   .main-index {
@@ -640,6 +622,102 @@ footer {
     height: 210px;
   }
 }
+
+/* ==========================
+   INDEX.HTML - MODAL JS
+========================== */
+
+.modal-oferta-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal-oferta-caja {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 430px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.modal-oferta-caja h2 {
+  color: #5b6c3a;
+  margin-bottom: 12px;
+}
+
+.modal-oferta-subtitulo {
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.modal-oferta-nombre {
+  color: #82a94e;
+  margin-bottom: 10px;
+}
+
+.modal-oferta-precio {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 18px;
+}
+
+.mensaje-pedido {
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+.mensaje-pedido.exito {
+  color: #5b6c3a;
+  font-weight: bold;
+}
+
+.modal-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-modal {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-modal-principal {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+.btn-modal-secundario {
+  background-color: #5b6c3a;
+  color: #ffffff;
+}
+
+.btn-modal-cerrar {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+
 /* ==========================
    OFERTAS.HTML
 ========================== */
@@ -1286,6 +1364,210 @@ footer {
   .menu-titulo-categoria {
     font-size: 1.7rem;
   }
+}
+
+/* ==========================
+   MENU.HTML - FILTROS JS
+========================== */
+
+.menu-filtros-js {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  margin: 25px 0 35px;
+  padding: 15px;
+
+  background-color: rgba(245, 247, 241, 0.9);
+  border: 1px solid #d6e8b4;
+  border-radius: 14px;
+
+  box-shadow: 0 2px 12px rgba(91, 108, 58, 0.1);
+}
+
+.menu-filtro-btn {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 18px;
+
+  background-color: #ffffff;
+  color: #5b6c3a;
+
+  font-weight: bold;
+  font-family: inherit;
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.menu-filtro-btn:hover {
+  background-color: #ebf4d6;
+}
+
+.menu-filtro-btn.filtro-activo {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+/* ==========================
+   MENU.HTML - MODAL CANTIDAD JS
+========================== */
+
+.modal-cantidad-fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.modal-cantidad-caja {
+  background-color: #ffffff;
+  padding: 28px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 430px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.modal-cantidad-caja h2 {
+  color: #5b6c3a;
+  margin-bottom: 12px;
+}
+
+.modal-cantidad-texto {
+  color: #555555;
+  margin-bottom: 8px;
+}
+
+.modal-cantidad-nombre {
+  color: #82a94e;
+  margin-bottom: 10px;
+}
+
+.modal-cantidad-precio {
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 18px;
+}
+
+.modal-cantidad-indicacion {
+  color: #666666;
+  margin-bottom: 10px;
+}
+
+.controles-cantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 22px;
+}
+
+.btn-cantidad {
+  width: 36px;
+  height: 36px;
+
+  border: none;
+  border-radius: 8px;
+
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-cantidad-restar {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+.btn-cantidad-sumar {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+.cantidad-seleccionada {
+  min-width: 40px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #5b6c3a;
+}
+
+.modal-cantidad-acciones {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.modal-cantidad-acciones .btn-modal {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.3s ease;
+}
+
+.modal-cantidad-acciones .btn-modal:hover {
+  transform: translateY(-2px);
+}
+
+.btn-confirmar-cantidad {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+.btn-confirmar-cantidad:hover {
+  background-color: #5b6c3a;
+}
+
+.btn-cancelar-cantidad {
+  background-color: #eeeeee;
+  color: #333333;
+}
+
+.btn-cancelar-cantidad:hover {
+  background-color: #dddddd;
+}
+
+/* ==========================
+   MENU.HTML - NOTIFICACIÓN JS
+========================== */
+
+.notificacion-menu-js {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+
+  background-color: #5b6c3a;
+  color: #ffffff;
+
+  padding: 14px 18px;
+  border-radius: 12px;
+
+  font-weight: bold;
+  line-height: 1.4;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+
+  z-index: 1000;
+  max-width: 330px;
 }
 
 /* ==========================
