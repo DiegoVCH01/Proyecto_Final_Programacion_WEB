@@ -1,113 +1,363 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mrs. Green Spoon - Registrarse</title>
-    <link rel="preload" href="img/spoon2.png" as="image">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="preload" href="img/spoon2.png" as="image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
-
+  <body>
     <header class="header-principal">
-        <div class="logo-area">
-            <img src="img/logo.png" alt="Logo Mrs. GS">
-            <div class="logo-texto">
-                <h1>Mrs. Green Spoon</h1>
-                <p>Menos desperdicio, más sabor</p>
-            </div>
+      <div class="logo-area">
+        <img src="img/logo.png" alt="Logo Mrs. GS" />
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
         </div>
+      </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="form_pedido.html">Pedido</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Pedido</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <section class="seccion-auth">
-            <div class="auth-container">
-                
-                <div class="auth-info-box">
-                    <img src="img/spoon.png" alt="Green Spoon Logo" class="auth-brand-logo interactiva">
-                    <h2>Únete al cambio verde</h2>
-                    <p>Regístrate para empezar a reducir el desperdicio de alimentos de los mejores locales locales y aprovecha precios hasta un 50% menores.</p>
-                    <div class="auth-features">
-                        <span><i class="fa-solid fa-earth-americas" aria-hidden="true"></i> Salva el Planeta</span>
-                        <span><i class="fa-solid fa-utensils" aria-hidden="true"></i> Platos Increíbles</span>
-                    </div>
-                </div>
-
-                <div class="auth-form-box">
-                    <h3>Crear Cuenta</h3>
-                    
-                    <form action="login.html" method="get" class="form-auth">
-                        <div class="form-group">
-                            <label for="nombre">Nombre Completo:</label>
-                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" autocomplete="name" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="correo">Correo Electrónico:</label>
-                            <input type="email" id="correo" name="correo" placeholder="Ej: juan@correo.com" autocomplete="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="password">Contraseña:</label>
-                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" autocomplete="new-password" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="confirm-password">Confirmar Contraseña:</label>
-                            <input type="password" id="confirm-password" name="confirm-password" placeholder="Repite tu contraseña" autocomplete="new-password" required>
-                        </div>
-                        
-                        <button type="submit" class="btn-auth">
-                            <i class="fa-solid fa-user-plus" aria-hidden="true"></i> Registrarse
-                        </button>
-                    </form>
-
-                    <p class="registro-link">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
-                </div>
-
+      <section class="seccion-auth">
+        <div class="auth-container">
+          <div class="auth-info-box">
+            <img
+              src="img/spoon.png"
+              alt="Green Spoon Logo"
+              class="auth-brand-logo interactiva"
+            />
+            <h2>Únete al cambio verde</h2>
+            <p>
+              Regístrate para empezar a reducir el desperdicio de alimentos de
+              los mejores locales locales y aprovecha precios hasta un 50%
+              menores.
+            </p>
+            <div class="auth-features">
+              <span
+                ><i class="fa-solid fa-earth-americas" aria-hidden="true"></i>
+                Salva el Planeta</span
+              >
+              <span
+                ><i class="fa-solid fa-utensils" aria-hidden="true"></i> Platos
+                Increíbles</span
+              >
             </div>
-        </section>
+          </div>
+
+          <div class="auth-form-box">
+            <h3>Crear Cuenta</h3>
+
+            <form
+              id="registroForm"
+              action="login.html"
+              method="get"
+              class="form-auth"
+            >
+              <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  name="nombre"
+                  placeholder="Ej: Juan Pérez"
+                  autocomplete="name"
+                  required
+                />
+                <span class="error-msg" id="error-nombre"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input
+                  type="email"
+                  id="correo"
+                  name="correo"
+                  placeholder="Ej: juan@correo.com"
+                  autocomplete="email"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <div class="password-wrapper">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Mínimo 8 caracteres"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <i
+                    class="fa-solid fa-eye toggle-password"
+                    id="togglePassword"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+
+                <div class="strength-meter-container">
+                  <div class="strength-meter-bar" id="strength-bar"></div>
+                </div>
+                <span class="strength-text" id="strength-text"
+                  >Fuerza: No válida</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="confirm-password">Confirmar Contraseña:</label>
+                <div class="password-wrapper">
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    placeholder="Repite tu contraseña"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <i
+                    class="fa-solid fa-eye toggle-password"
+                    id="toggleConfirmPassword"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <span class="error-msg" id="error-match"></span>
+              </div>
+
+              <button type="submit" class="btn-auth" id="btn-submit">
+                <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
+                Registrarse
+              </button>
+            </form>
+
+            <p class="registro-link">
+              ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a>
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacto: contacto@mrsgreenspoon.com</p>
-        <p><i class="fa-solid fa-phone" aria-hidden="true"></i> Teléfono: 987654321</p>
-        <p><i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Redes sociales:</p>
+      <p>
+        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacto:
+        contacto@mrsgreenspoon.com
+      </p>
+      <p>
+        <i class="fa-solid fa-phone" aria-hidden="true"></i> Teléfono: 987654321
+      </p>
+      <p>
+        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i> Redes
+        sociales:
+      </p>
 
-        <ul>
-            <a href="https://facebook.com" target="_blank" class="social-item">
-                <i class="fab fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="social-item">
-                <i class="fab fa-instagram" aria-hidden="true"></i>
-            </a>
-            <a href="https://wa.me/987654321" target="_blank" class="social-item">
-                <i class="fab fa-whatsapp" aria-hidden="true"></i>
-            </a>
-        </ul>
+      <ul>
+        <a href="https://facebook.com" target="_blank" class="social-item">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-item">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/987654321" target="_blank" class="social-item">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </ul>
 
-        <p class="footer-copy">
-            2026 Mrs. Green Spoon — Todos los derechos reservados
-        </p>
+      <p class="footer-copy">
+        2026 Mrs. Green Spoon — Todos los derechos reservados
+      </p>
     </footer>
 
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("registroForm");
+        const nombre = document.getElementById("nombre");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const btnSubmit = document.getElementById("btn-submit");
 
+        const errorNombre = document.getElementById("error-nombre");
+        const errorMatch = document.getElementById("error-match");
+        const strengthBar = document.getElementById("strength-bar");
+        const strengthText = document.getElementById("strength-text");
+
+        nombre.addEventListener("input", (e) => {
+          let value = e.target.value;
+          e.target.value = value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g, "");
+        });
+
+        nombre.addEventListener("blur", (e) => {
+          let value = e.target.value.trim();
+
+          if (value === "") {
+            errorNombre.textContent = "";
+            return;
+          }
+
+          let palabras = value.split(/\s+/).map((palabra) => {
+            return (
+              palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase()
+            );
+          });
+          e.target.value = palabras.join(" ");
+
+          if (palabras.length < 2) {
+            errorNombre.textContent =
+              "Por favor, ingresa tu nombre y apellido.";
+            nombre.style.borderColor = "#e74c3c";
+          } else {
+            errorNombre.textContent = "";
+            nombre.style.borderColor = "#82a94e";
+          }
+          validarFormulario();
+        });
+
+        password.addEventListener("input", () => {
+          const val = password.value;
+          let score = 0;
+
+          if (val.length >= 8) score++;
+          if (/[A-Z]/.test(val)) score++;
+          if (/[0-9]/.test(val)) score++;
+          if (/[^A-Za-z0-9]/.test(val)) score++;
+
+          strengthBar.className = "strength-meter-bar";
+
+          if (val.length === 0) {
+            strengthBar.style.width = "0%";
+            strengthText.textContent = "Fuerza: No válida";
+            strengthText.style.color = "#777777";
+          } else if (val.length < 8) {
+            strengthBar.style.width = "25%";
+            strengthBar.classList.add("weak");
+            strengthText.textContent = "Muy corta (Mínimo 8 caracteres)";
+            strengthText.style.color = "#e74c3c";
+          } else if (score <= 2) {
+            strengthBar.style.width = "50%";
+            strengthBar.classList.add("medium");
+            strengthText.textContent =
+              "Fuerza: Media (Añade números o símbolos)";
+            strengthText.style.color = "#f39c12";
+          } else {
+            strengthBar.style.width = "100%";
+            strengthBar.classList.add("strong");
+            strengthText.textContent = "Fuerza: ¡Excelente y Segura!";
+            strengthText.style.color = "#5b6c3a";
+          }
+
+          validarPasswords();
+        });
+
+        function validarPasswords() {
+          if (confirmPassword.value === "") {
+            errorMatch.textContent = "";
+            confirmPassword.style.borderColor = "#dce4cf";
+            return false;
+          }
+
+          if (password.value === confirmPassword.value) {
+            errorMatch.textContent = "✓ Las contraseñas coinciden";
+            errorMatch.style.color = "#5b6c3a";
+            confirmPassword.style.borderColor = "#82a94e";
+            return true;
+          } else {
+            errorMatch.textContent = "Las contraseñas no coinciden.";
+            errorMatch.style.color = "#e74c3c";
+            confirmPassword.style.borderColor = "#e74c3c";
+            return false;
+          }
+        }
+
+        confirmPassword.addEventListener("input", () => {
+          validarPasswords();
+          validarFormulario();
+        });
+
+        function validarFormulario() {
+          const passwordsMatch =
+            password.value === confirmPassword.value && password.value !== "";
+          const passwordLargoValido = password.value.length >= 8;
+          const nombrePalabras = nombre.value.trim().split(/\s+/);
+          const nombreValido =
+            nombrePalabras.length >= 2 && nombre.value.trim() !== "";
+
+          if (passwordsMatch && passwordLargoValido && nombreValido) {
+            btnSubmit.disabled = false;
+            btnSubmit.style.opacity = "1";
+            btnSubmit.style.cursor = "pointer";
+          } else {
+            btnSubmit.disabled = true;
+            btnSubmit.style.opacity = "0.6";
+            btnSubmit.style.cursor = "not-allowed";
+          }
+        }
+
+        validarFormulario();
+
+        form.addEventListener("submit", (e) => {
+          const nombrePalabras = nombre.value.trim().split(/\s+/);
+          if (
+            nombrePalabras.length < 2 ||
+            password.value !== confirmPassword.value ||
+            password.value.length < 8
+          ) {
+            e.preventDefault();
+            alert(
+              "Por favor, solucione los errores del formulario antes de continuar.",
+            );
+          }
+        });
+
+        const passwordInput = document.getElementById("password");
+        const togglePasswordIcon = document.getElementById("togglePassword");
+
+        togglePasswordIcon.addEventListener("click", () => {
+          const isPassword = passwordInput.getAttribute("type") === "password";
+          passwordInput.setAttribute("type", isPassword ? "text" : "password");
+          togglePasswordIcon.classList.toggle("fa-eye");
+          togglePasswordIcon.classList.toggle("fa-eye-slash");
+        });
+
+        const confirmPasswordInput =
+          document.getElementById("confirm-password");
+        const toggleConfirmPasswordIcon = document.getElementById(
+          "toggleConfirmPassword",
+        );
+
+        toggleConfirmPasswordIcon.addEventListener("click", () => {
+          const isPassword =
+            confirmPasswordInput.getAttribute("type") === "password";
+          confirmPasswordInput.setAttribute(
+            "type",
+            isPassword ? "text" : "password",
+          );
+          toggleConfirmPasswordIcon.classList.toggle("fa-eye");
+          toggleConfirmPasswordIcon.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+  </body>
 </html>
