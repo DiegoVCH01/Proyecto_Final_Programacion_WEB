@@ -12,10 +12,6 @@
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap"
-      rel="stylesheet"
-    />
-    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
@@ -79,7 +75,12 @@
           <div class="auth-form-box">
             <h3>Crear Cuenta</h3>
 
-            <form action="login.html" method="get" class="form-auth">
+            <form
+              id="registroForm"
+              action="login.html"
+              method="get"
+              class="form-auth"
+            >
               <div class="form-group">
                 <label for="nombre">Nombre Completo:</label>
                 <input
@@ -90,6 +91,7 @@
                   autocomplete="name"
                   required
                 />
+                <span class="error-msg" id="error-nombre"></span>
               </div>
 
               <div class="form-group">
@@ -102,33 +104,56 @@
                   autocomplete="email"
                   required
                 />
+                <span class="error-msg" id="error-correo"></span>
               </div>
 
               <div class="form-group">
                 <label for="password">Contraseña:</label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  placeholder="Mínimo 8 caracteres"
-                  autocomplete="new-password"
-                  required
-                />
+                <div class="password-wrapper">
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Mínimo 8 caracteres"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <i
+                    class="fa-solid fa-eye toggle-password"
+                    id="togglePassword"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+
+                <div class="strength-meter-container">
+                  <div class="strength-meter-bar" id="strength-bar"></div>
+                </div>
+                <span class="strength-text" id="strength-text"
+                  >Fuerza: No válida</span
+                >
               </div>
 
               <div class="form-group">
                 <label for="confirm-password">Confirmar Contraseña:</label>
-                <input
-                  type="password"
-                  id="confirm-password"
-                  name="confirm-password"
-                  placeholder="Repite tu contraseña"
-                  autocomplete="new-password"
-                  required
-                />
+                <div class="password-wrapper">
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    placeholder="Repite tu contraseña"
+                    autocomplete="new-password"
+                    required
+                  />
+                  <i
+                    class="fa-solid fa-eye toggle-password"
+                    id="toggleConfirmPassword"
+                    aria-hidden="true"
+                  ></i>
+                </div>
+                <span class="error-msg" id="error-match"></span>
               </div>
 
-              <button type="submit" class="btn-auth">
+              <button type="submit" class="btn-auth" id="btn-submit">
                 <i class="fa-solid fa-user-plus" aria-hidden="true"></i>
                 Registrarse
               </button>
@@ -185,5 +210,264 @@
         <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
       </div>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("registroForm");
+        const nombre = document.getElementById("nombre");
+        const correo = document.getElementById("correo");
+        const password = document.getElementById("password");
+        const confirmPassword = document.getElementById("confirm-password");
+        const btnSubmit = document.getElementById("btn-submit");
+
+        const errorNombre = document.getElementById("error-nombre");
+        const errorCorreo = document.getElementById("error-correo");
+        const errorMatch = document.getElementById("error-match");
+        const strengthBar = document.getElementById("strength-bar");
+        const strengthText = document.getElementById("strength-text");
+
+        nombre.addEventListener("input", (e) => {
+          let value = e.target.value;
+          e.target.value = value.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ ]/g, "");
+        });
+
+        nombre.addEventListener("blur", (e) => {
+          let value = e.target.value.trim();
+
+          if (value === "") {
+            errorNombre.textContent = "";
+            return;
+          }
+
+          let palabras = value.split(/\s+/).map((palabra) => {
+            return (
+              palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase()
+            );
+          });
+          e.target.value = palabras.join(" ");
+
+          if (palabras.length < 2) {
+            errorNombre.textContent =
+              "Por favor, ingresa tu nombre y apellido.";
+            nombre.style.borderColor = "#e74c3c";
+          } else {
+            errorNombre.textContent = "";
+            nombre.style.borderColor = "#82a94e";
+          }
+          validarFormulario();
+        });
+
+        correo.addEventListener("input", function () {
+          validarCorreoRegistro();
+          validarFormulario();
+        });
+
+        function validarCorreoRegistro() {
+          const correoValor = correo.value.trim();
+
+          if (correoValor === "") {
+            errorCorreo.textContent = "";
+            correo.style.borderColor = "#dce4cf";
+            return false;
+          }
+
+          if (!validarCorreoMrsGreenSpoon(correoValor)) {
+            errorCorreo.textContent = "Ingresa un correo electrónico válido.";
+            correo.style.borderColor = "#e74c3c";
+            return false;
+          }
+
+          errorCorreo.textContent = "";
+          correo.style.borderColor = "#82a94e";
+          return true;
+        }
+
+        password.addEventListener("input", () => {
+          const val = password.value;
+          let score = 0;
+
+          if (val.length >= 8) score++;
+          if (/[A-Z]/.test(val)) score++;
+          if (/[0-9]/.test(val)) score++;
+          if (/[^A-Za-z0-9]/.test(val)) score++;
+
+          strengthBar.className = "strength-meter-bar";
+
+          if (val.length === 0) {
+            strengthBar.style.width = "0%";
+            strengthText.textContent = "Fuerza: No válida";
+            strengthText.style.color = "#777777";
+          } else if (val.length < 8) {
+            strengthBar.style.width = "25%";
+            strengthBar.classList.add("weak");
+            strengthText.textContent = "Muy corta (Mínimo 8 caracteres)";
+            strengthText.style.color = "#e74c3c";
+          } else if (score <= 2) {
+            strengthBar.style.width = "50%";
+            strengthBar.classList.add("medium");
+            strengthText.textContent =
+              "Fuerza: Media (Añade números o símbolos)";
+            strengthText.style.color = "#f39c12";
+          } else {
+            strengthBar.style.width = "100%";
+            strengthBar.classList.add("strong");
+            strengthText.textContent = "Fuerza: ¡Excelente y Segura!";
+            strengthText.style.color = "#5b6c3a";
+          }
+
+          validarPasswords();
+          validarFormulario();
+        });
+
+        function validarPasswords() {
+          if (confirmPassword.value === "") {
+            errorMatch.textContent = "";
+            confirmPassword.style.borderColor = "#dce4cf";
+            return false;
+          }
+
+          if (password.value === confirmPassword.value) {
+            errorMatch.textContent = "✓ Las contraseñas coinciden";
+            errorMatch.style.color = "#5b6c3a";
+            confirmPassword.style.borderColor = "#82a94e";
+            return true;
+          } else {
+            errorMatch.textContent = "Las contraseñas no coinciden.";
+            errorMatch.style.color = "#e74c3c";
+            confirmPassword.style.borderColor = "#e74c3c";
+            return false;
+          }
+        }
+
+        confirmPassword.addEventListener("input", () => {
+          validarPasswords();
+          validarFormulario();
+        });
+
+        function validarFormulario() {
+          const passwordsMatch =
+            password.value === confirmPassword.value && password.value !== "";
+          const passwordLargoValido = password.value.length >= 8;
+          const nombrePalabras = nombre.value.trim().split(/\s+/);
+          const nombreValido =
+            nombrePalabras.length >= 2 && nombre.value.trim() !== "";
+          const correoValido = validarCorreoMrsGreenSpoon(correo.value.trim());
+
+          if (
+            passwordsMatch &&
+            passwordLargoValido &&
+            nombreValido &&
+            correoValido
+          ) {
+            btnSubmit.disabled = false;
+            btnSubmit.style.opacity = "1";
+            btnSubmit.style.cursor = "pointer";
+          } else {
+            btnSubmit.disabled = true;
+            btnSubmit.style.opacity = "0.6";
+            btnSubmit.style.cursor = "not-allowed";
+          }
+        }
+
+        validarFormulario();
+
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const nombrePalabras = nombre.value.trim().split(/\s+/);
+
+          if (
+            nombrePalabras.length < 2 ||
+            password.value !== confirmPassword.value ||
+            password.value.length < 8
+          ) {
+            mostrarModalSistema({
+              icono: "⚠️",
+              titulo: "Formulario incompleto",
+              mensaje:
+                "Por favor, corrige los datos del formulario antes de continuar.",
+              textoConfirmar: "Entendido",
+            });
+            return;
+          }
+
+          try {
+            const respuesta = await fetch(
+              "http://localhost:4000/api/usuarios/registrar",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  nombre: nombre.value.trim(),
+                  correo: correo.value.trim(),
+                  password: password.value,
+                }),
+              },
+            );
+
+            const datos = await respuesta.json();
+
+            if (!respuesta.ok) {
+              mostrarModalSistema({
+                icono: "❌",
+                titulo: "No se pudo registrar",
+                mensaje: datos.mensaje,
+                textoConfirmar: "Entendido",
+              });
+
+              return;
+            }
+
+            await mostrarModalSistema({
+              icono: "✅",
+              titulo: "Registro exitoso",
+              mensaje:
+                "Usuario registrado correctamente. Ahora puedes iniciar sesión.",
+              textoConfirmar: "Ir al login",
+            });
+
+            window.location.href = "login.html";
+          } catch (error) {
+            console.error("Error al registrar:", error);
+            mostrarModalSistema({
+              icono: "🔌",
+              titulo: "Error de conexión",
+              mensaje: "No se pudo conectar con el servidor.",
+              textoConfirmar: "Entendido",
+            });
+          }
+        });
+
+        const passwordInput = document.getElementById("password");
+        const togglePasswordIcon = document.getElementById("togglePassword");
+
+        togglePasswordIcon.addEventListener("click", () => {
+          const isPassword = passwordInput.getAttribute("type") === "password";
+          passwordInput.setAttribute("type", isPassword ? "text" : "password");
+          togglePasswordIcon.classList.toggle("fa-eye");
+          togglePasswordIcon.classList.toggle("fa-eye-slash");
+        });
+
+        const confirmPasswordInput =
+          document.getElementById("confirm-password");
+        const toggleConfirmPasswordIcon = document.getElementById(
+          "toggleConfirmPassword",
+        );
+
+        toggleConfirmPasswordIcon.addEventListener("click", () => {
+          const isPassword =
+            confirmPasswordInput.getAttribute("type") === "password";
+          confirmPasswordInput.setAttribute(
+            "type",
+            isPassword ? "text" : "password",
+          );
+          toggleConfirmPasswordIcon.classList.toggle("fa-eye");
+          toggleConfirmPasswordIcon.classList.toggle("fa-eye-slash");
+        });
+      });
+    </script>
+    <script src="js/main.js"></script>
   </body>
 </html>
