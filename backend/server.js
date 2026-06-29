@@ -344,6 +344,7 @@ app.post("/api/pedidos", async function (req, res) {
       cliente_telefono,
       direccion,
       metodo_pago,
+      descuento,
       productos,
     } = req.body;
 
@@ -360,6 +361,7 @@ app.post("/api/pedidos", async function (req, res) {
       cliente_telefono,
       direccion,
       metodo_pago,
+      descuento,
       productos,
     });
 
@@ -370,8 +372,8 @@ app.post("/api/pedidos", async function (req, res) {
   } catch (error) {
     console.error("Error al registrar pedido:", error);
 
-    res.status(500).json({
-      mensaje: "Error al registrar pedido",
+    res.status(error.statusCode || 500).json({
+      mensaje: error.message || "Error al registrar pedido",
     });
   }
 });
@@ -394,6 +396,57 @@ app.get("/api/pedidos", async function (req, res) {
   }
 });
 
+
+/* ==========================
+   LISTAR PEDIDOS DETALLADOS
+========================== */
+
+app.get("/api/pedidos/detallados", async function (req, res) {
+  try {
+    const { id_usuario } = req.query;
+
+    const pedidos = await consultas.listarPedidosDetallados(id_usuario || null);
+
+    res.json(pedidos);
+  } catch (error) {
+    console.error("Error al listar pedidos detallados:", error);
+
+    res.status(500).json({
+      mensaje: "Error al listar pedidos detallados",
+    });
+  }
+});
+
+/* ==========================
+   CANCELAR PEDIDO
+========================== */
+
+app.patch("/api/pedidos/:id/cancelar", async function (req, res) {
+  try {
+    const { id } = req.params;
+    const { id_usuario } = req.body;
+
+    if (!id_usuario) {
+      return res.status(400).json({
+        mensaje: "El usuario es obligatorio para cancelar el pedido",
+      });
+    }
+
+    const pedidoCancelado = await consultas.cancelarPedido(id, id_usuario);
+
+    res.json({
+      mensaje: "Pedido cancelado correctamente",
+      pedido: pedidoCancelado,
+    });
+  } catch (error) {
+    console.error("Error al cancelar pedido:", error);
+
+    res.status(error.statusCode || 500).json({
+      mensaje: error.message || "Error al cancelar pedido",
+    });
+  }
+});
+
 /* ==========================
    DETALLE DE UN PEDIDO
 ========================== */
@@ -410,6 +463,24 @@ app.get("/api/pedidos/:id/detalle", async function (req, res) {
 
     res.status(500).json({
       mensaje: "Error al obtener detalle del pedido",
+    });
+  }
+});
+
+/* ==========================
+   OFERTAS
+========================== */
+
+app.get("/api/ofertas", async function (req, res) {
+  try {
+    const ofertas = await consultas.obtenerOfertas();
+
+    res.json(ofertas);
+  } catch (error) {
+    console.error("Error al obtener ofertas:", error);
+
+    res.status(500).json({
+      mensaje: "Error al obtener ofertas",
     });
   }
 });

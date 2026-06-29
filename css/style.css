@@ -760,6 +760,21 @@ footer {
    OFERTAS.HTML
 ========================== */
 
+.oferta-stock {
+  display: block;
+
+  margin-top: 10px;
+  margin-bottom: 12px;
+
+  color: #5b6c3a;
+
+  font-weight: bold;
+}
+
+.oferta-stock.agotado {
+  color: #c0392b;
+}
+
 .seccion-ofertas {
   margin-top: 30px;
 }
@@ -2452,7 +2467,6 @@ input[type="password"]::-ms-clear {
   }
 }
 
-
 .menu-mensaje-bd {
   background-color: #fff5df;
   color: #76510d;
@@ -2512,4 +2526,248 @@ input[type="password"]::-ms-clear {
   font-weight: 700;
   font-size: 0.9rem;
   margin-bottom: 12px;
+}
+
+
+/* ==========================
+   FORMULARIO - CARRITO DINÁMICO
+========================== */
+
+.fp-lista-carrito {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.fp-carrito-vacio {
+  text-align: center;
+  padding: 25px 10px;
+  color: #888888;
+}
+
+.fp-carrito-vacio p {
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555555;
+}
+
+.fp-carrito-vacio small {
+  font-size: 0.85rem;
+}
+
+.fp-badge-vacio {
+  background-color: #eeeeee;
+  color: #888888;
+}
+
+.fp-badge-activo {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+.fp-item-lado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.fp-btn-quitar {
+  border: none;
+  background-color: #fff0ec;
+  color: #b84a3a;
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.78rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fp-btn-quitar:hover {
+  background-color: #ffd8cf;
+}
+
+.fp-total-carrito {
+  border-top: 1px dashed #eeeeee;
+  padding-top: 12px;
+  margin-top: 10px;
+}
+
+.fp-total-descuento {
+  color: #5b6c3a;
+  font-size: 0.95rem;
+}
+
+.fp-total-final {
+  font-size: 1.2rem;
+  color: #333333;
+}
+
+.fp-total-final strong {
+  color: #82a94e;
+}
+
+.fp-enlaces-carrito {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fp-enlaces-carrito a {
+  background-color: #edf6dc;
+  color: #5b6c3a;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.fp-enlaces-carrito a:hover {
+  background-color: #82a94e;
+  color: #ffffff;
+}
+
+/* ==========================
+   FORMULARIO - PAGO SIMULADO
+========================== */
+
+.barra-pago-simulado {
+  width: 100%;
+  height: 12px;
+  background-color: #edf3e2;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 18px;
+  border: 1px solid #d6e8b4;
+}
+
+#progresoPagoSimulado {
+  width: 0%;
+  height: 100%;
+  background-color: #82a94e;
+  transition: width 1s linear;
+}
+
+/* ==========================
+   FORMULARIO - DATOS GUARDADOS
+========================== */
+
+.fp-datos-guardados {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.fp-datos-guardados .fp-check-item {
+  font-size: 0.85rem;
+  color: #5b6c3a;
+  font-weight: 600;
+}
+
+.fp-datos-guardados .fp-btn-secundario {
+  padding: 9px 14px;
+}
+
+.fp-mensaje-datos {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #5b6c3a;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* ==========================
+   PEDIDOS - JS DINÁMICO
+========================== */
+
+.pedidos-mensaje-tabla {
+  text-align: center;
+  padding: 24px;
+  color: #5b6c3a;
+  font-weight: bold;
+}
+
+.estado.pendiente,
+.estado.en-proceso {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.estado.entregado {
+  background-color: #e0f0c8;
+  color: #3d6b1e;
+}
+
+.estado.cancelado {
+  background-color: #fde0dc;
+  color: #9f2f23;
+}
+
+/* ==========================
+   PEDIDOS - ESTADOS DINÁMICOS
+========================== */
+
+.estado.pendiente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.estado.preparando {
+  background-color: #d6eaf8;
+  color: #1a5276;
+}
+
+.estado.enviado {
+  background-color: #e0f0c8;
+  color: #3d6b1e;
+}
+
+.estado.entregado {
+  background-color: #d9f7e8;
+  color: #17663a;
+}
+
+.estado.cancelado {
+  background-color: #fde0dc;
+  color: #9f2f23;
+}
+
+.pedidos-mensaje-tabla {
+  text-align: center;
+  padding: 24px;
+  color: #5b6c3a;
+  font-weight: bold;
+}
+
+.pedidos-mensaje-tabla p {
+  margin-bottom: 14px;
+}
+
+/* ==========================
+   PEDIDOS - CANCELAR PEDIDO
+========================== */
+
+.btn-cancelar-pedido {
+  border: none;
+  background-color: #fff0ec;
+  color: #b84a3a;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-cancelar-pedido:hover {
+  background-color: #ffd8cf;
+  transform: translateY(-2px);
+}
+
+.texto-accion-pedido {
+  color: #888888;
+  font-size: 0.85rem;
+  font-weight: bold;
 }

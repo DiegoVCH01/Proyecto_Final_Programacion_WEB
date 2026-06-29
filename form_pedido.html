@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcoPlato - Formulario</title>
+    <title>Mrs. Green Spoon - Formulario de pedido</title>
     <link rel="stylesheet" href="css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,7 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap"
       rel="stylesheet"
     />
-
   </head>
   <body>
     <header class="header-principal">
@@ -47,7 +46,7 @@
         <p>Completa tus datos de entrega y el detalle de tu orden.</p>
       </div>
 
-      <form action="pedidos.html" class="fp-layout-checkout">
+      <form id="formPedido" action="pedidos.html" class="fp-layout-checkout">
         <div class="fp-columna-formulario">
           <section class="fp-seccion-form">
             <div class="fp-titulo-seccion-flex">
@@ -70,7 +69,13 @@
               </div>
               <div class="fp-campo">
                 <label>Teléfono *</label>
-                <input type="text" name="telefono" required />
+                <input
+                  type="text"
+                  name="telefono"
+                  maxlength="9"
+                  inputmode="numeric"
+                  required
+                />
               </div>
             </div>
           </section>
@@ -83,18 +88,37 @@
               <small
                 >Indica calle, número y referencias para el repartidor.</small
               >
+              <div class="fp-datos-guardados">
+                <label class="fp-check-item">
+                  <input type="checkbox" id="guardarDatosPedido" checked />
+                  Guardar estos datos para mi próximo pedido.
+                </label>
+
+                <button
+                  type="button"
+                  id="btnNuevaDireccion"
+                  class="fp-btn-secundario"
+                >
+                  Usar otra dirección
+                </button>
+              </div>
+
+              <p id="mensajeDatosGuardados" class="fp-mensaje-datos"></p>
             </div>
           </section>
 
           <section class="fp-seccion-form">
-            <h3>Detalle del pedido *</h3>
-            <div class="fp-campo">
-              <label>Escribe los platos que deseas rescatar hoy</label>
-              <textarea name="platos_pedido" rows="3" required></textarea>
-              <small
-                >Puedes consultar la página de Menú para ver la
-                disponibilidad.</small
-              >
+            <h3>Detalle del pedido</h3>
+
+            <p>
+              Los productos se cargan automáticamente desde tu carrito. Puedes
+              agregar más platos desde el menú o revisar las ofertas
+              disponibles.
+            </p>
+
+            <div class="fp-enlaces-carrito">
+              <a href="menu.html" class="fp-link-accion">Ir al menú</a>
+              <a href="ofertas.html" class="fp-link-accion">Ver ofertas</a>
             </div>
           </section>
 
@@ -265,31 +289,29 @@
           <div class="fp-tarjeta-resumen">
             <div class="fp-resumen-header">
               <h4>Resumen de pedido</h4>
-              <span class="fp-badge" style="background: #eee; color: #888"
-                >Vacío</span
-              >
+              <span class="fp-badge" id="fpBadgeResumen">Vacío</span>
             </div>
 
-            <div style="text-align: center; padding: 25px 10px; color: #888">
-              <p style="margin-bottom: 8px; font-weight: bold; color: #555">
-                Tu carrito está esperando.
-              </p>
-              <p style="font-size: 0.85rem">
-                Los detalles de tus platos y el costo de envío se calcularán al
-                confirmar la orden.
-              </p>
+            <div id="fpListaCarrito" class="fp-lista-carrito">
+              <div class="fp-carrito-vacio">
+                <p>Tu carrito está esperando.</p>
+                <small>Agrega productos desde el menú u ofertas.</small>
+              </div>
             </div>
 
-            <div
-              class="fp-total-carrito"
-              style="
-                border-top: 1px dashed #eee;
-                padding-top: 15px;
-                margin-top: 10px;
-              "
-            >
-              <span style="color: #888">Total estimado:</span>
-              <strong style="color: #888">S/ 0.00</strong>
+            <div class="fp-total-carrito">
+              <span>Subtotal:</span>
+              <strong id="fpSubtotalCarrito">S/ 0.00</strong>
+            </div>
+
+            <div class="fp-total-carrito fp-total-descuento">
+              <span>Descuento:</span>
+              <strong id="fpDescuentoCarrito">S/ 0.00</strong>
+            </div>
+
+            <div class="fp-total-carrito fp-total-final">
+              <span>Total estimado:</span>
+              <strong id="fpTotalCarrito">S/ 0.00</strong>
             </div>
           </div>
 
@@ -297,13 +319,19 @@
             <label>¿Tienes un cupón? Agrégalo aquí.</label>
             <div class="fp-cupon-flex">
               <input type="text" placeholder="Código" />
-              <button type="button" class="fp-btn-secundario">Validar</button>
+              <button
+                type="button"
+                id="btnValidarCupon"
+                class="fp-btn-secundario"
+              >
+                Validar
+              </button>
             </div>
           </div>
 
           <div class="fp-acciones-finales">
             <label class="fp-check-legal">
-              <input type="checkbox" required />
+              <input type="checkbox" id="aceptarTerminos" required />
               Acepto los Términos y Condiciones y Políticas de Privacidad.
             </label>
             <button type="submit" class="fp-btn-principal">
@@ -317,7 +345,7 @@
     <footer>
       <div class="footer-contenido">
         <div class="footer-marca">
-          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo" />
         </div>
 
         <div class="footer-contacto">
@@ -357,5 +385,8 @@
         <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
       </div>
     </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/form_pedido.js"></script>
   </body>
 </html>

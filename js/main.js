@@ -343,6 +343,9 @@
     localStorage.removeItem("usuarioIdMrsGreenSpoon");
     localStorage.removeItem("usuarioCorreoMrsGreenSpoon");
 
+    
+    localStorage.removeItem("pedidoMrsGreenSpoon");
+
     window.location.href = "login.html";
   }
 
