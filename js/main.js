@@ -530,19 +530,6 @@
     return tarjeta;
   }
 
-  function mezclarPlatillos(listaPlatillos) {
-    const copia = listaPlatillos.slice();
-
-    for (let i = copia.length - 1; i > 0; i--) {
-      const numeroAleatorio = Math.floor(Math.random() * (i + 1));
-      const temporal = copia[i];
-
-      copia[i] = copia[numeroAleatorio];
-      copia[numeroAleatorio] = temporal;
-    }
-
-    return copia;
-  }
 
   function moverCarruselConJS(carrusel) {
     let desplazamiento = 0;
