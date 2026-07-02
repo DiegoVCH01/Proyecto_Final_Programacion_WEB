@@ -3,30 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoPlato - Pedido</title>
+    <title>Mrs. Green Spoon - Pedido</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+SA+Beginner:wght@400..700&family=IM+Fell+Double+Pica+SC&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="css/style.css"> 
 </head>
 <body>
 
     <header class="header-principal">
-        <div class="logo-area">
-            <img src="img/logo.png" alt="Logo EcoPlato">
-            <div class="logo-texto">
-                <h1>EcoPlato</h1>
-                <p>Menos desperdicio, más sabor</p>
-            </div>
+      <div class="logo-area">
+        <img src="img/spoon.png" alt="Logo Mrs. GS" />
+        <div class="logo-texto">
+          <h1>Mrs. Green Spoon</h1>
+          <p>Menos desperdicio, más sabor</p>
         </div>
+      </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="menu.html">Menú</a></li>
-                <li><a href="form_pedido.html">Pedido</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-                <li><a href="pedidos.html">Pedidos</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+      <div class="header-animacion">
+        <img src="img/header-food.gif" alt="Animación decorativa" />
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="menu.html">Menú</a></li>
+          <li><a href="form_pedido.html">Formulario</a></li>
+          <li><a href="ofertas.html">Ofertas</a></li>
+          <li><a href="pedidos.html">Pedidos</a></li>
+          <li><a href="login.html">Login</a></li>
+        </ul>
+      </nav>
     </header>
 
     <main class="contenedor-principal fp-animacion-entrada">
@@ -36,7 +46,8 @@
             <p>Completa tus datos de entrega y el detalle de tu orden.</p>
         </div>
         
-        <form action="pedidos.html" class="fp-layout-checkout">
+        <!-- Agregado el ID formPedido para el JS de tu equipo -->
+        <form id="formPedido" class="fp-layout-checkout">
             
             <div class="fp-columna-formulario">
                 
@@ -45,61 +56,52 @@
                         <h3>Datos personales</h3>
                         <a href="login.html" class="fp-link-sesion">Iniciar sesión</a>
                     </div>
+                    <!-- Mensaje para cuando carga datos guardados -->
+                    <small id="mensajeDatosGuardados" style="color: #4CAF50; display: block; margin-bottom: 15px;"></small>
                     
                     <div class="fp-grid-2col">
                         <div class="fp-campo">
-                            <label>Nombres *</label>
-                            <input type="text" name="nombres" required>
+                            <label for="nombres">Nombres *</label>
+                            <input type="text" id="nombres" name="nombres" required>
                         </div>
                         <div class="fp-campo">
-                            <label>Apellidos *</label>
-                            <input type="text" name="apellidos" required>
+                            <label for="apellidos">Apellidos *</label>
+                            <input type="text" id="apellidos" name="apellidos" required>
                         </div>
                         <div class="fp-campo">
-                            <label>Correo electrónico *</label>
-                            <input type="email" name="correo" required>
+                            <label for="correo">Correo electrónico *</label>
+                            <input type="email" id="correo" name="correo" required>
                         </div>
                         <div class="fp-campo">
-                            <label>Teléfono *</label>
-                            <input type="text" name="telefono" required>
+                            <label for="telefono">Teléfono *</label>
+                            <input type="text" id="telefono" name="telefono" required>
                         </div>
                     </div>
                 </section>
 
                 <section class="fp-seccion-form">
-                    <h3>Datos de entrega *</h3>
+                    <div class="fp-titulo-seccion-flex" style="justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <h3 style="margin: 0;">Datos de entrega *</h3>
+                        <button type="button" id="btnNuevaDireccion" class="fp-btn-secundario" style="padding: 5px 10px; font-size: 0.8rem;">Nueva dirección</button>
+                    </div>
                     <div class="fp-campo">
-                        <label>Ingresa tu dirección exacta</label>
-                        <input type="text" name="direccion" required>
+                        <label for="direccion">Ingresa tu dirección exacta</label>
+                        <input type="text" id="direccion" name="direccion" required>
                         <small>Indica calle, número y referencias para el repartidor.</small>
+                    </div>
+                    <!-- Checkbox para guardar datos requerido por el JS -->
+                    <div style="margin-top: 15px;">
+                        <label class="fp-check-legal">
+                            <input type="checkbox" id="guardarDatosPedido" checked>
+                            Guardar mis datos para mi próximo pedido
+                        </label>
                     </div>
                 </section>
 
                 <section class="fp-seccion-form">
                     <h3>Detalle del pedido *</h3>
-                    <div class="fp-campo">
-                        <label>Escribe los platos que deseas rescatar hoy</label>
-                        <textarea name="platos_pedido" rows="3" required></textarea>
-                        <small>Puedes consultar la página de Menú para ver la disponibilidad.</small>
-                    </div>
-                </section>
-
-                <section class="fp-seccion-form">
-                    <h3>Comprobante de pago</h3>
-                    <div class="fp-opciones-radio">
-                        <label class="fp-radio-item">
-                            <input type="radio" name="comprobante" value="boleta_simple" checked>
-                            Boleta simple
-                        </label>
-                        <label class="fp-radio-item">
-                            <input type="radio" name="comprobante" value="boleta_electronica">
-                            Boleta electrónica
-                        </label>
-                        <label class="fp-radio-item">
-                            <input type="radio" name="comprobante" value="factura">
-                            Factura electrónica
-                        </label>
-                    </div>
+                    <!-- Aquí el JS de tu equipo inyectará los platos -->
+                    <div id="fpListaCarrito"></div>
                 </section>
 
                 <section class="fp-seccion-form">
@@ -133,7 +135,7 @@
                                     <path d="M9 9V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4"></path>
                                     <path d="M12 17v-3"></path>
                                 </svg>
-                                <span>POS (Contraentrega)</span>
+                                <span>POS</span>
                             </div>
                         </label>
                         <label class="fp-tarjeta-pago">
@@ -157,17 +159,23 @@
                 <div class="fp-tarjeta-resumen">
                     <div class="fp-resumen-header">
                         <h4>Resumen de pedido</h4>
-                        <span class="fp-badge" style="background:#EEE; color:#888;">Vacío</span>
+                        <!-- ID actualizado -->
+                        <span id="fpBadgeResumen" class="fp-badge" style="background:#EEE; color:#888;">Vacío</span>
                     </div>
                     
-                    <div style="text-align: center; padding: 25px 10px; color: #888;">
-                        <p style="margin-bottom: 8px; font-weight: bold; color: #555;">Tu carrito está esperando.</p>
-                        <p style="font-size: 0.85rem;">Los detalles de tus platos y el costo de envío se calcularán al confirmar la orden.</p>
-                    </div>
-
                     <div class="fp-total-carrito" style="border-top: 1px dashed #EEE; padding-top: 15px; margin-top: 10px;">
-                        <span style="color: #888;">Total estimado:</span>
-                        <strong style="color: #888;">S/ 0.00</strong>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="color: #888;">Subtotal:</span>
+                            <strong id="fpSubtotalCarrito" style="color: #888;">S/ 0.00</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #4CAF50;">
+                            <span>Descuento:</span>
+                            <strong id="fpDescuentoCarrito">- S/ 0.00</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 1.1em; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd;">
+                            <span style="color: #333; font-weight: bold;">Total estimado:</span>
+                            <strong id="fpTotalCarrito" style="color: #333;">S/ 0.00</strong>
+                        </div>
                     </div>
                 </div>
 
@@ -175,16 +183,18 @@
                     <label>¿Tienes un cupón? Agrégalo aquí.</label>
                     <div class="fp-cupon-flex">
                         <input type="text" placeholder="Código">
-                        <button type="button" class="fp-btn-secundario">Validar</button>
+                        <!-- ID btnValidarCupon agregado -->
+                        <button type="button" id="btnValidarCupon" class="fp-btn-secundario">Validar</button>
                     </div>
                 </div>
 
                 <div class="fp-acciones-finales">
                     <label class="fp-check-legal">
-                        <input type="checkbox" required>
+                        <!-- ID aceptarTerminos agregado -->
+                        <input type="checkbox" id="aceptarTerminos" required>
                         Acepto los Términos y Condiciones y Políticas de Privacidad.
                     </label>
-                    <button type="submit" class="fp-btn-principal">CONFIRMAR E IR A MIS PEDIDOS</button>
+                    <button type="submit" class="fp-btn-principal">CONFIRMAR PEDIDO</button>
                 </div>
 
             </div>
@@ -192,87 +202,45 @@
     </main>
 
     <footer>
-        <p>Contacto: contacto@ecoplato.com</p>
-        <p>Teléfono: 987654321</p>
-        <p>Redes sociales:</p>
-        <ul>
-            <li><a href="#" class="social-item">FB</a></li>
-            <li><a href="#" class="social-item">IG</a></li>
-            <li><a href="#" class="social-item">WA</a></li>
-        </ul>
-        <p class="footer-copy">2026 EcoPlato - Todos los derechos reservados</p>
+      <div class="footer-contenido">
+        <div class="footer-marca">
+          <img src="img/logo.png" alt="Mrs. Green Spoon" class="footer-logo" />
+        </div>
+
+        <div class="footer-contacto">
+          <h4>Contacto</h4>
+          <p><i class="fa-solid fa-envelope"></i> contacto@mrsgreenspoon.com</p>
+          <p><i class="fa-solid fa-phone"></i> 987654321</p>
+        </div>
+
+        <div class="footer-ayuda">
+          <h4>Ayuda</h4>
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos del servicio</a>
+          <a href="#">Preguntas frecuentes</a>
+        </div>
+
+        <div class="footer-redes">
+          <h4>Síguenos</h4>
+          <div class="redes-iconos">
+            <a href="https://facebook.com" target="_blank" class="social-item">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="social-item">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/987654321" target="_blank" class="social-item">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-inferior">
+        <p>© 2026 Mrs. Green Spoon — Todos los derechos reservados</p>
+      </div>
     </footer>
-<script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const form = document.querySelector(".fp-layout-checkout");
-            const inputPlatos = document.querySelector("textarea[name='platos_pedido']");
-            const totalText = document.querySelector(".fp-total-carrito strong");
-            const btnCupon = document.querySelector(".fp-btn-secundario");
-            const inputCupon = document.querySelector(".fp-cupon-flex input");
-            const badgeResumen = document.querySelector(".fp-badge");
 
-            let precioBase = 0;
-            let descuento = 0;
-
-            inputPlatos.addEventListener("input", (e) => {
-                const texto = e.target.value.trim();
-                if (texto.length > 0) {
-                    const cantidadPlatos = texto.split(",").filter(p => p.trim() !== "").length;
-                    precioBase = cantidadPlatos * 15.00;
-                    badgeResumen.textContent = `${cantidadPlatos} plato(s)`;
-                    badgeResumen.style.background = "#4CAF50";
-                    badgeResumen.style.color = "white";
-                } else {
-                    precioBase = 0;
-                    badgeResumen.textContent = "Vacío";
-                    badgeResumen.style.background = "#EEE";
-                    badgeResumen.style.color = "#888";
-                }
-                actualizarTotal();
-            });
-
-            btnCupon.addEventListener("click", () => {
-                const codigo = inputCupon.value.trim().toUpperCase();
-                if (codigo === "ECO20") {
-                    descuento = 0.20;
-                    alert("¡Cupón ECO20 aplicado! Tienes 20% de descuento en tu orden.");
-                } else if (codigo !== "") {
-                    descuento = 0;
-                    alert("El cupón ingresado no es válido.");
-                }
-                actualizarTotal();
-            });
-
-            function actualizarTotal() {
-                const totalFinal = precioBase - (precioBase * descuento);
-                totalText.textContent = `S/ ${totalFinal.toFixed(2)}`;
-            }
-
-            form.addEventListener("submit", (e) => {
-                e.preventDefault();
-
-                const formData = new FormData(form);
-                const nuevoPedido = {
-                    id: Date.now(),
-                    nombres: formData.get("nombres"),
-                    apellidos: formData.get("apellidos"),
-                    direccion: formData.get("direccion"),
-                    platos: formData.get("platos_pedido"),
-                    metodoPago: formData.get("metodo_pago"),
-                    total: totalText.textContent,
-                    fecha: new Date().toLocaleDateString()
-                };
-
-                let historialPedidos = JSON.parse(localStorage.getItem("ecoPlatoPedidos")) || [];
-                historialPedidos.push(nuevoPedido);
-                localStorage.setItem("ecoPlatoPedidos", JSON.stringify(historialPedidos));
-
-                alert("¡Pedido confirmado con éxito! Redirigiendo a tu historial...");
-                window.location.href = form.action; 
-            });
-        });
-    </script>
-</body>
-</html>
+    <script src="js/form_pedido.js"></script>
 </body>
 </html>
