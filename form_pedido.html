@@ -46,7 +46,6 @@
             <p>Completa tus datos de entrega y el detalle de tu orden.</p>
         </div>
         
-        <!-- Agregado el ID formPedido para el JS de tu equipo -->
         <form id="formPedido" class="fp-layout-checkout">
             
             <div class="fp-columna-formulario">
@@ -56,7 +55,6 @@
                         <h3>Datos personales</h3>
                         <a href="login.html" class="fp-link-sesion">Iniciar sesión</a>
                     </div>
-                    <!-- Mensaje para cuando carga datos guardados -->
                     <small id="mensajeDatosGuardados" style="color: #4CAF50; display: block; margin-bottom: 15px;"></small>
                     
                     <div class="fp-grid-2col">
@@ -89,7 +87,6 @@
                         <input type="text" id="direccion" name="direccion" required>
                         <small>Indica calle, número y referencias para el repartidor.</small>
                     </div>
-                    <!-- Checkbox para guardar datos requerido por el JS -->
                     <div style="margin-top: 15px;">
                         <label class="fp-check-legal">
                             <input type="checkbox" id="guardarDatosPedido" checked>
@@ -100,7 +97,6 @@
 
                 <section class="fp-seccion-form">
                     <h3>Detalle del pedido *</h3>
-                    <!-- Aquí el JS de tu equipo inyectará los platos -->
                     <div id="fpListaCarrito"></div>
                 </section>
 
@@ -159,23 +155,27 @@
                 <div class="fp-tarjeta-resumen">
                     <div class="fp-resumen-header">
                         <h4>Resumen de pedido</h4>
-                        <!-- ID actualizado -->
                         <span id="fpBadgeResumen" class="fp-badge" style="background:#EEE; color:#888;">Vacío</span>
                     </div>
                     
-                    <div class="fp-total-carrito" style="border-top: 1px dashed #EEE; padding-top: 15px; margin-top: 10px;">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                    <!-- CAJA CORREGIDA -->
+                    <div class="fp-total-carrito" style="border-top: 1px dashed #EEE; padding-top: 15px; margin-top: 10px; display: flex; flex-direction: column; gap: 8px;">
+                        
+                        <div style="display: flex; justify-content: space-between; width: 100%;">
                             <span style="color: #888;">Subtotal:</span>
                             <strong id="fpSubtotalCarrito" style="color: #888;">S/ 0.00</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px; color: #4CAF50;">
+                        
+                        <div style="display: flex; justify-content: space-between; width: 100%; color: #4CAF50;">
                             <span>Descuento:</span>
                             <strong id="fpDescuentoCarrito">- S/ 0.00</strong>
                         </div>
-                        <div style="display: flex; justify-content: space-between; font-size: 1.1em; margin-top: 10px; padding-top: 10px; border-top: 1px solid #ddd;">
+                        
+                        <div style="display: flex; justify-content: space-between; width: 100%; font-size: 1.1em; margin-top: 5px; padding-top: 10px; border-top: 1px solid #ddd;">
                             <span style="color: #333; font-weight: bold;">Total estimado:</span>
                             <strong id="fpTotalCarrito" style="color: #333;">S/ 0.00</strong>
                         </div>
+
                     </div>
                 </div>
 
@@ -183,14 +183,12 @@
                     <label>¿Tienes un cupón? Agrégalo aquí.</label>
                     <div class="fp-cupon-flex">
                         <input type="text" placeholder="Código">
-                        <!-- ID btnValidarCupon agregado -->
                         <button type="button" id="btnValidarCupon" class="fp-btn-secundario">Validar</button>
                     </div>
                 </div>
 
                 <div class="fp-acciones-finales">
                     <label class="fp-check-legal">
-                        <!-- ID aceptarTerminos agregado -->
                         <input type="checkbox" id="aceptarTerminos" required>
                         Acepto los Términos y Condiciones y Políticas de Privacidad.
                     </label>
