@@ -11,6 +11,7 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     iniciarFuncionesGenerales();
+    iniciarMenuMovil();
     iniciarIndex();
     iniciarMenu();
   });
@@ -48,6 +49,25 @@
 
     cambiarMenuLogin(usuarioActivo.nombre);
     cambiarTituloBienvenida(usuarioActivo.nombre);
+  }
+
+  function iniciarMenuMovil() {
+    const botonMenu = document.getElementById("btnMenuMovil");
+    const navPrincipal = document.getElementById("navPrincipal");
+
+    if (!botonMenu || !navPrincipal) {
+      return;
+    }
+
+    botonMenu.addEventListener("click", function () {
+      const menuAbierto = navPrincipal.classList.toggle("nav-movil-abierto");
+
+      botonMenu.setAttribute("aria-expanded", menuAbierto);
+
+      botonMenu.innerHTML = menuAbierto
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
   }
 
   function cambiarMenuLogin(usuario) {
@@ -343,7 +363,6 @@
     localStorage.removeItem("usuarioIdMrsGreenSpoon");
     localStorage.removeItem("usuarioCorreoMrsGreenSpoon");
 
-    
     localStorage.removeItem("pedidoMrsGreenSpoon");
 
     window.location.href = "login.html";
@@ -529,7 +548,6 @@
 
     return tarjeta;
   }
-
 
   function moverCarruselConJS(carrusel) {
     let desplazamiento = 0;
