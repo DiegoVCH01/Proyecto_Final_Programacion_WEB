@@ -71,11 +71,64 @@ async function cargarPedidosDesdeBD(idUsuario) {
       cuerpoTabla.appendChild(fila);
 
       pedidosMostrados.add(pedido.id_pedido);
+
+      if (mostrarAccion && pedido.estado === "Preparando") {
+        mostrarAlertaProximoVencer(pedido.id_pedido, pedido.fecha_pedido);
+      }
     });
   } catch (error) {
     console.error("Error al cargar pedidos:", error);
     mostrarMensajePedidos("No se pudo conectar con el servidor.");
   }
+}
+
+function mostrarAlertaProximoVencer(idPedido, fechaPedido) {
+  // Esperar a que el DOM tenga la fila lista
+  setTimeout(function () {
+    const boton = document.querySelector(`[data-id-pedido="${idPedido}"]`);
+
+    if (!boton) return;
+
+    const fila = boton.closest("tr");
+    if (!fila) return;
+
+    if (fila.querySelector(".alerta-cancelacion")) return;
+
+    fila.classList.add("fila-por-vencer");
+
+    const alerta = document.createElement("div");
+    alerta.className = "alerta-cancelacion";
+    alerta.innerHTML = `
+      <i class="fa-solid fa-clock"></i>
+      <span class="alerta-texto">¡Último momento para cancelar!</span>
+    `;
+
+    boton.parentElement.appendChild(alerta);
+
+    const fechaInicio = new Date(fechaPedido);
+
+    const intervalo = setInterval(function () {
+      const ahora = new Date();
+      const segundosTranscurridos = Math.floor((ahora - fechaInicio) / 1000);
+      const segundosRestantes = 60 - segundosTranscurridos;
+
+      const textoAlerta = fila.querySelector(".alerta-texto");
+
+      if (!textoAlerta) {
+        clearInterval(intervalo);
+        return;
+      }
+
+      if (segundosRestantes <= 0) {
+        clearInterval(intervalo);
+        fila.classList.remove("fila-por-vencer");
+        alerta.remove();
+        return;
+      }
+
+      textoAlerta.innerHTML = `¡Solo quedan <strong>${segundosRestantes}s</strong> para cancelar!`;
+    }, 1000);
+  }, 100);
 }
 
 function crearFilaPedido(pedido, mostrarAccion) {
@@ -152,7 +205,10 @@ async function cancelarPedidoDesdePagina(idPedido) {
   const usuario = obtenerUsuarioPedidos();
 
   if (!usuario) {
-    mostrarMensajePedidos("Debes iniciar sesión para cancelar un pedido.", true);
+    mostrarMensajePedidos(
+      "Debes iniciar sesión para cancelar un pedido.",
+      true,
+    );
     return;
   }
 
@@ -199,8 +255,7 @@ async function cancelarPedidoDesdePagina(idPedido) {
     await mostrarModalPedido({
       icono: "✅",
       titulo: "Pedido cancelado",
-      mensaje:
-        "El pedido fue cancelado correctamente y el stock fue devuelto.",
+      mensaje: "El pedido fue cancelado correctamente y el stock fue devuelto.",
       textoConfirmar: "Aceptar",
     });
 

@@ -2846,3 +2846,40 @@ input[type="password"]::-ms-clear {
     box-shadow: none;
   }
 }
+
+
+/* ==========================
+   PEDIDOS - ALERTA CANCELACION
+========================== */
+
+.fila-por-vencer {
+  background-color: #fff8e6 !important;
+  border-left: 4px solid #e6a817;
+  transition: background-color 0.4s ease;
+}
+ 
+.alerta-cancelacion {
+  margin-top: 6px;
+  padding: 5px 10px;
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #e6a817;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  animation: parpadeoAlerta 1s ease infinite;
+}
+ 
+.alerta-cancelacion i {
+  color: #e6a817;
+  font-size: 0.9rem;
+}
+ 
+@keyframes parpadeoAlerta {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.4; }
+  100% { opacity: 1; }
+}
